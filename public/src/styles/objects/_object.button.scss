@@ -1,0 +1,229 @@
+
+
+// --------------------------------------------------------------------------
+//    BUTTONS
+// --------------------------------------------------------------------------
+
+
+// iOS "clickable elements" fix for role="button".
+// Fixes "clickability" issue (and more generally, the firing of events such as focus as well)
+// for traditionally non-focusable elements with role="button"
+// see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+
+[role="button"] {
+    cursor: pointer;
+}
+
+
+// The SUITCSS Button, themeable.
+
+$Button: (
+    Button-border-color: palette(highlight-action),
+    Button-border-radius: $buttonRadius,
+    Button-border-width: 1px,
+    Button-color: palette(background),
+    Button-disabled-opacity: 0.4,
+    Button-font: $font-text-medium,
+    Button-height: map-fetch($button-height, base),
+    Button-padding: 0 space(0.5)
+);
+
+@mixin buttonStyle() {
+    @include baseTransition();
+    @include typeReset();
+    background: transparent;
+    border-color: map-fetch($Button, Button-border-color);
+    border-radius: map-fetch($Button, Button-border-radius);
+    border-style: solid;
+    border-width: map-fetch($Button, Button-border-width);
+    box-sizing: border-box;
+    color: map-fetch($Button, Button-color);
+    cursor: pointer;
+    display: inline-block;
+    font-family: map-fetch($Button, Button-font);
+    line-height: map-fetch($Button, Button-height);
+    margin: 0;
+    padding: map-fetch($Button, Button-padding);
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+
+    @include on-event(true) {
+        background-color: palette(highlight-action);
+        border-color: map-fetch($Button, Button-border-color);
+        color: map-fetch($Button, Button-color);
+        //font-family: map-fetch($Button, Button-font);
+        outline: none !important;
+        text-decoration: none;
+    }
+    
+    // Work around a Firefox/IE bug where the transparent `button` background
+    // results in a loss of the default `button` focus styles.
+    &:focus {
+        outline: 1px dotted;
+        outline: 5px auto -webkit-focus-ring-color;
+    }
+    
+    // Remove excess padding and border in Firefox 4+
+    &::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+
+    &[disabled],
+    &:disabled
+    &.is-disabled {
+        border-color: palette("black-40");
+        background-color: palette("black-40");
+        cursor: not-allowed;
+        cursor: default;
+        opacity: var(--Button-disabled-opacity);
+        opacity: map-fetch($Button, Button-disabled-opacity);
+    }
+}
+
+
+// Primary button
+// 1. Added to account for Founders Grotesk line balance.
+// --------------------------------------------------------------------------
+
+//@mixin button() {
+//    @include buttonStyle();
+//    @include buttonText();
+//}
+
+.c-button {
+    @include buttonStyle();
+    @include typeSize(text);
+    //color: palette(background);
+    padding-top: 5px !important; // 1.
+}
+
+.c-button--primary {
+    padding: 0 space(1.5) 0;
+}
+
+
+// Btn vars
+// --------------------------------------------------------------------------
+
+.c-button--full {
+    text-align: center;
+    width: 100%;
+}
+
+.c-button--lineHeight {
+    line-height: map-fetch($button-height, base) !important;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.c-button--rev {
+    @include buttonStyle();
+    border-radius: $buttonRadius * 0.5;
+    
+    @include on-event(true) {
+        background-color: transparent;
+        border-color: currentColor;
+        color: palette(text);
+    }
+}
+
+.c-button--abuttingLeftInput {
+    margin-left: -1px;
+}
+
+
+
+// Btn colors
+// --------------------------------------------------------------------------
+
+.c-button--transparent {
+    @include on-event(true) {
+        background-color: transparent;
+        border-color: transparent;
+        color: palette(black-40);
+        font-family: $font-text-medium;
+    }
+    
+    &.is-archived {
+        @include on-event(true) {
+            cursor: default;
+        }
+    }
+}
+
+.c-button--brand {
+    @include on-event(true) {
+        background-color: palette(brand-aubergine);
+        border-color: palette(brand-aubergine);
+    }
+}
+
+.c-button--facebook {
+    @include on-event(true) {
+        background-color: palette(social-facebook);
+        border-color: palette(social-facebook);
+    }
+}
+
+.c-button--instagram {
+    @include on-event(true) {
+        background-color: palette(social-instagram);
+        border-color: palette(social-instagram);
+    }
+}
+
+
+
+
+// Ticket button
+// --------------------------------------------------------------------------
+
+$arrowSize: map-fetch($button-height, base);
+
+@mixin Arrow() {
+    content: "";
+    display: block;
+    position: absolute;
+    //right: -#{$arrowSize * 0.5};
+    right: -23px;
+    top: -1px;
+
+}
+
+/* uncss:ignore */
+.t-button--primary {
+    @include buttonStyle();
+    min-width: 92%;
+    padding: space(0.25) space(0.25) space(0.25) space(0.5);
+    position: relative;
+
+    &:after {
+        @include Arrow();
+        border-bottom: 59px solid transparent;
+        border-left: $arrowSize * 0.5 solid palette(brand);
+    }
+}
+
+
+// Close button (this just positions an icon)
+// --------------------------------------------------------------------------
+
+.t-buttonClose {
+    color: palette(brand);
+    position: fixed;
+    right: space(0.5);
+    top: space(0.5);
+    z-index: map-fetch($z-index, first);
+
+    @include on-event() {
+        outline: none;
+    }
+
+    @include media-breakpoint-up(xs) {
+        right: space(1);
+        top: 31px;
+    }
+}

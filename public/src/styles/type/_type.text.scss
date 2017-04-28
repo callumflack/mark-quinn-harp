@@ -1,0 +1,324 @@
+
+
+// --------------------------------------------------------------------------
+//   TEXT TYPOGRAPHY
+// --------------------------------------------------------------------------
+
+
+// Common theme…
+
+// PS: https://blog.codepen.io/2016/10/31/fluid-type-blogs/
+
+// A note on mixin parameters.
+// Required parameters must preced optional parameters.
+// To use parameter 4, you must have a value for each
+// preceding required parameter. Or list the parameter
+// value after it's key name (like below).
+// @mixin textSm() {
+// 	@include textTemplate(
+// 		Text--sm,
+// 		$mixinLetterSpacing: 0.01em
+// 	);
+// }
+
+@mixin textTemplate(
+    $mixinSize: text,
+    $mixinColor: palette(text),
+    $mixinFont: $font-text-regular,
+    $mixinLetterSpacing: 0.01em,
+    $mixinLineHeight: $base-line-height-unit
+) {
+
+    // standards
+    color: $mixinColor;
+    font-family: $mixinFont;
+    letter-spacing: $mixinLetterSpacing;
+    line-height: $mixinLineHeight;
+
+    // sizes
+    //@include textSize($mixinSize);
+    @include typeSize($mixinSize);
+    //font-size: fontsize($mixinSize, xs);
+    //@include media-breakpoint-up(sm) { font-size: fontsize($mixinSize, sm); }
+    //@include media-breakpoint-up(xl) { font-size: fontsize($mixinSize, rg); }
+
+    // very specific children
+    > li,
+    > li a,
+    > a {
+        //color: currentColor;
+        //font-family: inherit;
+        //font-size: inherit;
+        margin: 0;
+    }
+}
+
+
+// Text components by size…
+
+@mixin textXs() {
+    @include textTemplate(
+        $mixinSize: text--xs
+    );
+}
+
+@mixin textXsBold() {
+    @include textTemplate(
+        $mixinSize: text--xs,
+        $mixinFont: $font-text-bold
+    );
+}
+
+@mixin textXsHeavy() {
+    @include textTemplate(
+        $mixinSize: text--xs,
+        $mixinFont: $font-text-heavy
+    );
+}
+
+@mixin textSm() {
+    @include textTemplate(
+        $mixinSize: text--sm
+    );
+}
+
+@mixin textSmBold() {
+    @include textTemplate(
+        $mixinSize: text--sm,
+        $mixinFont: $font-text-bold
+    );
+}
+
+@mixin textSmMedium() {
+    @include textTemplate(
+        $mixinSize: text--sm,
+        $mixinFont: $font-text-medium
+    );
+}
+
+@mixin textSmLight() {
+    @include textTemplate(
+        $mixinSize: text--sm,
+        $mixinColor: palette(text-light)
+    );
+}
+
+@mixin textRg() {
+    @include textTemplate();
+    //@include textSize();
+}
+
+@mixin textRgBold() {
+    @include textTemplate(
+        $mixinFont: $font-text-bold
+    );
+}
+
+@mixin textRgMedium() {
+    @include textTemplate(
+        $mixinFont: $font-text-medium
+    );
+}
+
+@mixin textRgDark() {
+    @include textTemplate(
+        $mixinColor: palette(dark)
+    );
+}
+
+@mixin textLg() {
+    @include textTemplate(
+        $mixinSize: text--lg
+    );
+}
+
+@mixin textLgBold() {
+    @include textTemplate(
+        $mixinSize: text--lg,
+        $mixinFont: $font-text-bold
+    );
+}
+
+
+
+
+// Meta texts…
+
+@mixin textMeta() {
+    @include textTemplate(
+        $mixinSize: text--meta,
+        $mixinFont: $font-text-medium,
+        $mixinLetterSpacing: 0.075em
+    );
+    margin-bottom: $paragraphSpace * 0.5;
+    text-transform: uppercase;
+
+    @include media-breakpoint-down(sm) {
+        line-height: 1.25;
+    }
+}
+
+@mixin textAside {
+    @include textTemplate(
+        $mixinSize: text--sm,
+        $mixinFont: $font-text-medium,
+        $mixinLetterSpacing: 0.075em
+    );
+    text-transform: uppercase;
+
+    @include media-breakpoint-down(sm) {
+        line-height: 1.25;
+    }
+}
+
+
+
+// Component: Text
+// Init mixins in classes.
+// --------------------------------------------------------------------------
+
+.c-text--xs       { @include textXs(); }
+.c-text--sm       { @include textSm(); }
+.c-text--smBold   { @include textSmBold(); }
+.c-text--smMedium { @include textSmMedium(); }
+.c-text           { @include textRg(); }
+.c-text--medium   { @include textRgMedium(); }
+.c-text--intro    { @include textRg(); color: palette(black-50); margin-bottom: space(0.5); }
+.c-text--lg       { @include textLg(); }
+.c-text--aside { @include textAside(); }
+
+
+
+.c-text--meta {
+    @include textSm();
+    color: palette("black-50") !important;
+
+    > a {
+        border-color: transparent !important;
+
+        @include on-event() {
+            border-color: palette("black-50") !important;
+        }
+    }
+
+    @include media-breakpoint-up(sm) {
+        margin: auto;
+    }
+}
+
+
+
+// Component: Text blocks
+// --------------------------------------------------------------------------
+
+.c-text-block   { > * { @include textRg(); } }
+.c-textSm-block { > * { @include textSm(); } }
+.c-textSmLight-block { > * { @include textSmLight(); } }
+
+.c-text-block--footer {
+    @include listClean();
+    margin: 0;
+
+    &::before {
+        background-color: rgba( palette(background), 0.2);
+        content: " ";
+        display: block;
+        height: 1px;
+        margin: space(1) 0 space(1.15);
+        width: 2.5%;
+    }
+
+    > * {
+        @include textRg();
+        margin-bottom: 0;
+    }
+}
+
+
+
+// Component: list
+// --------------------------------------------------------------------------
+
+//list cell of fixed width, like a tabbed info element
+.c-list--itemTag {
+    @include textSm();
+    display: inline-block;
+    width: space(0.75);
+}
+
+.c-list--meta {
+    @include textSm();
+    @include listClean();
+    color: palette(black-50);
+    margin-bottom: space(1.25);
+}
+
+.c-list--meta-title {
+    color: palette(text) !important;
+    margin: space(1.25) 0 space(0.625) !important;
+
+    &:first-child {
+        margin-top: 0 !important;
+    }
+}
+
+
+
+// Utility: sizes, weights & italics
+// --------------------------------------------------------------------------
+
+.u-textSizeXs      { @include typeSize(text--xs); }
+
+.u-textWtLt        { font-family: $font-text-light !important; }
+.u-textWtRg        { font-family: $font-text-regular !important; }
+.u-textWtMd        { font-family: $font-text-medium !important; }
+.u-textWtBold        { font-family: $font-text-bold !important; }
+
+//.u-textWtSemi      { font-family: $font-text-semibold !important; }
+//.u-textEmRg        { font-family: $font-text-regular-i !important; }
+//.u-textEmMd        { font-family: $font-text-medium-i !important; }
+
+
+
+// Set HTML elements
+// --------------------------------------------------------------------------
+
+// h1, h2, h3, h4, h5, h6,
+// blockquote, figure
+// li
+ul, ol, dl,
+p, address,
+table, time,
+fieldset, figcaption,
+pre {
+    @include textRg();
+}
+
+em,
+.u-textEm {
+    @include typeReset();
+    //font-family: $font-text-bold-i;
+}
+
+b,
+strong,
+.u-textBold {
+    @include typeReset();
+    @include textMeta();
+    //font-family: $font-text-bold;
+}
+
+blockquote,
+.Blockquote {
+    // is this req'd?
+    // @include typeReset();
+    color: palette(black-50);
+    font-family: $font-text-book;
+    font-size: fontsize(text, xs);
+    margin-bottom: space(0.75);
+
+    @include media-breakpoint-up(sm) {
+        font-size: fontsize(text, sm);
+        margin-bottom: space(1);
+    }
+}

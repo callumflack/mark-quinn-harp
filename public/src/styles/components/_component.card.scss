@@ -1,0 +1,248 @@
+
+
+// --------------------------------------------------------------------------
+//   CARD COMPONENT
+// --------------------------------------------------------------------------
+
+
+// Registry cards grid
+// --------------------------------------------------------------------------
+
+.c-cards {
+    //@include container();
+    //margin-top: space(3);
+}
+
+.c-cards .c-card {
+    //flex: 1 0 5em;
+    flex: 0 0 240px;
+}
+
+
+// Registry card
+// --------------------------------------------------------------------------
+
+.c-card {
+    @include textLgBold();
+    //height: 360px;
+    //margin-top: space(2);
+    position: relative;
+    
+    a {
+        text-decoration: none;
+    }
+}
+
+// Pinterest-like card hover
+@keyframes tapAnimation {
+    0% {
+        opacity: 1;
+        transform: scale(0.96);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.c-card {
+    //cursor: zoom-in;
+    cursor: pointer;
+    margin: -10px;
+    padding: 10px;
+    position: relative;
+}
+
+.c-card:hover::before {
+    animation: tapAnimation 0.25s cubic-bezier(0.31, 1, 0.34, 1) forwards;
+}
+
+.c-card::before {
+    //background: rgba(0,0,0,0.05);
+    border: 1px solid rgba( palette(brand-aubergine), 0.5);
+    border-radius: 8px;
+    content: " " !important;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transform: scale(0.96);
+    width: 100%;
+    z-index: 1;
+}
+
+.c-card--create::before {
+    background: rgba( palette(highlight-action), 0.05);
+    border: initial;
+}
+
+
+// Registry card elements
+// --------------------------------------------------------------------------
+
+.c-card-visual {
+    //align-items: center;
+    display: flex;
+    height: space(10);
+    position: relative;
+    
+    @include when-inside(".is-funded") { color: palette(highlight-edit); }
+    //@include when-inside(".c-cards--community") { height: space(15); }
+
+}
+
+.c-card-img {
+    @include coverImage();
+    @include imageBlend($color: rgba( palette(black), 0.07 ) );
+    @include o-posFullScreen(absolute);
+    border-radius: $cardRadius;
+    
+    &.is-muted { 
+        filter: grayscale(1); 
+    }
+
+    &.is-unfundedAndArchived { 
+        filter: grayscale(1); 
+        opacity: 0.25;
+    }
+}
+
+//.c-card-mask {
+//    @include o-posFullScreen(absolute);
+//    background-color: rgba( palette(highlight-action-dark), 0.25 );
+//    background-blend-mode: multiply;
+//    border-radius: $cardRadius;
+//    content: " ";
+//    opacity: 1;
+//}
+
+.c-card-infoInsideVisual,
+.c-card-visualStatusContainer {
+    @include o-posFullScreen(absolute);
+    border-radius: $cardRadius;
+    display: flex;
+    flex: 1 1 0%;
+    
+    &.is-funded { 
+        align-items: center;
+        background-color: rgba( palette(highlight-edit), 0.85 );
+        background-blend-mode: multiply;
+        color: palette(white); 
+    }
+    
+    .c-registryStatus { display: none; }
+
+    &.is-draft { 
+        background-color: rgba( palette(highlight-action-dark), 0.85 );
+        //background-color: palette(highlight-action-dark);
+        background-blend-mode: multiply;
+        color: palette(white); 
+        
+        .c-registryStatus   { display: inline-block; }
+        .c-registryProgress { display: none; }
+    }
+}
+
+.c-card-infoInsideVisual {
+    //align-items: flex-end;
+    //align-content: flex-end;
+    //background-color: rgba( palette(black), 0.4 );
+    background-image: linear-gradient( rgba(palette(black),0.1) 50%, rgba(palette(black),0.7) 100% ); 
+    flex-direction: column;
+    padding: space(0.5) space(0.75);
+}
+
+.c-card-visualStatusContainer-screen {
+    @include headlineMdBold();
+    color: inherit;
+    flex-basis: 100%;
+    position: relative;
+    text-align: center;
+
+    //@include when-inside(".is-funded") { color: palette(highlight-edit); }
+}
+
+.c-card-info {
+    padding: 10px space(1/2) space(1/2);
+    
+    @include when-inside(".c-cards--community") { height: 100px; }
+
+}
+
+.c-card-title {
+    @include textLgBold();
+    line-height: 1.15;
+    margin-bottom: 3px;
+    
+    @include when-inside(".c-registries--archived") { color: palette("black-50"); }
+    @include when-inside(".c-card-infoInsideVisual") { color: palette(white); }
+}
+
+.c-card-metaPrimary {
+    color: palette("black-50");
+    margin: 0;
+}
+
+.c-card-metaSecondary {
+    @include textSmLight();
+    color: palette("black-40");
+    margin-top: 2px;
+}
+
+.c-card-button {
+    background-color: palette("black-10");
+    border-color: palette("black-10");
+    color: palette("black-50");
+    width: 100%;
+    
+    @include on-event() {
+        background-color: palette("black-20");
+        border-color: palette("black-20");
+        color: palette(text);
+    }
+    
+    &--download {
+        background-color: palette(background);
+        border-color: palette("black-30");
+        z-index: 2;
+
+        @include on-event() {
+            background-color: palette(background);
+            border-color: palette("black-50");
+            color: palette(text);
+        }
+    }
+
+}
+
+
+// Create registry button
+// --------------------------------------------------------------------------
+
+.c-card-createButton {
+    align-items: center;
+    border: 1px solid palette(highlight-action);
+    border-radius: 4px;
+    color: palette(highlight-action);
+    display: flex;
+    height: 100%;
+    min-height: 362px;
+    text-align: center;
+
+}
+
+.c-card--create > a {
+    text-align: center;
+    
+    span {
+        margin-top: 5px;
+    }
+    
+    &:hover {
+        color: palette(highlight-action);
+        text-decoration: none;
+    }
+}

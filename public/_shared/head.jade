@@ -1,0 +1,34 @@
+head
+    //- basics
+    meta(charset="UTF-8")
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    title= locals.title ? title + " | " + site_title : site_title
+    //- title Mark Quinn, Psychologist | Canberra, Australia
+
+    //- seo
+    if current.path[0] === "index"
+        meta(name='description', content= site_description)
+    else if current.path[0] === "blog"
+        meta(name='description', content= site_description)
+    meta(name='keywords', content=site_keywords)
+    meta(name='author', content=site_author)
+    if current.path[0] === "about"
+        link(rel='canonical', href=site_url + '/' + current.path[0])
+    else if current.path[0] === "work"
+        link(rel='canonical', href=site_url + '/' + current.path[0] + '/' + current.path[1])
+    else
+        link(rel='canonical', href=site_url)
+    //- != partial("linkeddata")
+
+    //- socials
+
+    //- favicons
+    //- link(rel='apple-touch-icon', sizes='180x180', href='/assets/images/favicons/apple-touch-icon.png')
+    //- link(rel='icon', type='image/png', href='/assets/images/favicons/favicon-32x32.png', sizes='32x32')
+    //- link(rel='icon', type='image/png', href='/assets/images/favicons/favicon-16x16.png', sizes='16x16')
+    //- link(rel='manifest', href='/assets/images/favicons/manifest.json')
+    //- link(rel='mask-icon', href='/assets/images/favicons/safari-pinned-tab.svg', color='#000000')
+    //- meta(name='theme-color', content='#000000')
+
+    //- assets
+    link(rel='stylesheet', href='assets/styles/application.css')

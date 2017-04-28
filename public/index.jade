@@ -1,0 +1,127 @@
+nav.c-nav.c-nav--medium.c-nav--floating
+    .c-nav-logo #{site_title}
+    ul.c-nav-menu
+        li: a(href='#why', data-scroll) Why Mark?
+        li: a(href='#testimonials', data-scroll) What people say
+        li: a(href='#contact', data-scroll) Contact
+
+header.c-hero
+    .FlexEmbed
+        .FlexEmbed--ratio.c-hero-ratioIndex
+        .FlexEmbed-content
+            .o-coverImage.c-hero--dark(style='background-image: url("assets/images/hero-1.jpg")')
+                .o-aligner
+                    .o-aligner-item
+                        .c-hero-hgroup
+                            h1.c-hero-display Function better. Choose better. Live better.
+                            // <h3 class='c-hero-headline u-sm-size5of6 u-centerBlock u-marginT'>Discover new choices. Find new clarity. Transform old patterns. Experience change.</h3>
+                            h3.c-hero-headline.u-sm-size5of6.u-centerBlock.u-marginT
+                                | Mark Quinn, Psychologist, can help you discover new choices, find clarity,  transform old patterns and experience change.
+
+main.Main(role="main")
+    .o-container.o-container--md.c-block.u-textCenter#why
+        .c-headline--inText Why talk to Mark?
+        hr.c-rule--short
+        //- h1.c-headline I listen to the unique story, strengths and goals of the individual to make meaningful change.
+        h1.c-headline.u-sm-size5of6.u-centerBlock
+            | I'll listen to your unique story, strengths and goals to help you make meaningful change.
+        p.c-text--lg.u-sm-size5of6.u-spaceT15.u-centerBlock
+            | &quot;My mission is be as effective as I can, helping people access their best selves to live the life they deeply want.&quot;
+
+    .o-container.c-block.c-block--half
+        .Grid.Grid--withGutter
+            .Grid-cell.u-sm-size1of3
+                //- .c-headline--number: span 1
+                .u-textCenter
+                    svg.o-icon.u-colorBrandComplement.u-spaceB(height='80', version='1.1', viewbox='0 0 80 80', width='80')
+                        != partial("_shared/ic-listening")
+                h3.c-headline--sm Respectful and attentive collaboration focussed on your unique experience.
+                p.u-spaceTD4.u-sm-spaceTD2
+                    | I help people change their life by deeply listening and collaborating to find an affirmative, strength-based future.
+        
+            .Grid-cell.u-sm-size1of3.u-smDown-spaceT
+                .u-textCenter
+                    svg.o-icon.u-colorBrandComplement.u-spaceB(height='80', version='1.1', viewbox='0 0 80 80', width='80')
+                        != partial("_shared/ic-strengths")
+                h3.c-headline--sm A therapeutic process that focusses on untapped strengths within.
+                p.u-spaceTD4.u-sm-spaceTD2
+                    | I offer my clients the opportunity to experience a therapeutic process that can use each individual&rsquo;s interests and untapped strengths.
+        
+            .Grid-cell.u-sm-size1of3.u-smDown-spaceT
+                .u-textCenter
+                    svg.o-icon.u-colorBrandComplement.u-spaceB(height='80', version='1.1', viewbox='0 0 80 80', width='80')
+                        != partial("_shared/ic-engage")
+                h3.c-headline--sm Function better to feel better. So you can fully engage in life.
+                p.u-spaceTD4.u-sm-spaceTD2
+                    | Finding a new clarity around future possibilities opens the way towards an affirmative, strength-based future.
+        
+        hr.c-rule
+    
+    .o-container.c-block
+        .Grid.Grid--withGutterLg.o-aligner
+            .Grid-cell.u-sm-size1of2
+                h1.c-headline.u-smDown-textCenter Over two decades of experience, knowledge and empathy
+                p.u-spaceT
+                | &quot;Each individual has specific outcomes that they hope to achieve through the therapeutic process, although they may not know this to begin with. Often part of the process of listening and collaborating involves identifying and clarifying these outcomes. At other times it involves focussing on interrupting certain patterns of thinking and/or behaving in order to begin to create the desired change. In each of these situations I aim to assist my clients to achieve a greater sense of agency. I like to see clients begin to have more choices about creating a future life that they want.&quot;
+                //- p.u-spaceT
+                    //- | Mark Quinn is a registered psychologist with 23 years of experience in Solution-Oriented approaches to Brief Therapy. He has worked with a broad range of client populations, including mental health, adolescents, families and couples. Mark has worked in a variety of settings including university counselling, community counselling centres and private practice. He has consulted with, supervised and
+                .u-marginT
+                    a.c-headline--inText.u-textLeft(href='/') Read more about Marks career &rarr;
+            .Grid-cell.u-sm-size1of2.u-smDown-flexOrderFirst.u-smDown-spaceB
+                img(src='assets/images/markquinn.jpg', style='opacity: 0.8;')
+            
+    .c-block.c-block--neutral#testimonials
+        .o-container.u-textCenter
+            //- h2.c-headline--inText What people say about working with Mark
+            h2.c-headline--inText What people say
+            hr.c-rule--short
+            blockquote.c-headline--quote
+              | Mark was able to help where I felt others had not connected or understood me. Our discussions were easy, respectful. And in the end, what helped me was simply knowing what I could do for myself, rather than what I was doing wrong.
+
+    .o-container.o-container--sm.c-block#contact
+        .u-textCenter
+            h2.c-headline--inText Get in touch
+            hr.c-rule--short
+            p.c-text If you&apos;d like to engage in an affirmative strength-based collaboration, write to me using the form below. Or get in touch:
+
+        .u-textCenter.u-marginT15
+            p.c-text.u-colorBrand.u-marginB0 Email: 
+                a.o-link(href='mailto:mark@markquinn.com.au') mark@markquinn.com.au
+            p.c-text.u-colorBrand Call: 
+                a.o-link(href='+61 0408 767 540') +61 0408 767 540
+            p.c-text.u-marginT15
+                | If you&apos;re not ready to go further, no problem. If you fill in the simple form below, I&apos;ll send you a single-page PDF that outlines 10 habits which, in my experience, have almost always given positive outcomes.
+        
+        form#js-contact-form.c-form.u-marginT15(method='POST', action='https://formspree.io/mark@markquinn.com.au')
+            #js-contact-flash-messages
+            .c-form-group
+                input.c-form-control(placeholder='First Name', name='first-name')
+            .c-form-group
+                input.c-form-control(placeholder='Your email address', name='email')
+            .c-form-group
+                textarea.c-form-control.c-form-control--textarea(placeholder='How can I help you?', name='message', rows='3')
+            .c-form-group.u-textCenter.u-spaceT
+                button.c-button.c-button--primary.u-size1of2(type='submit') Submit
+
+    footer.c-footer
+        .o-container
+            nav.c-nav
+                .c-nav-logo #{site_title}
+                ul.c-nav-menu.u-textRight
+                    li: a(data-scroll='', href='#why') Why Mark?
+                    li: a(data-scroll='', href='#testimonials') What people say
+                    li: a(data-scroll='', href='#contact') Contact
+                
+            .Grid.Grid--withGutters.u-colorBlack40.c-text--sm
+                .Grid-cell.u-sm-size.u-marginR15
+                    div Your Office Name
+                    div 2/177 Pointing Drive,
+                    div Canberra 4870
+                .Grid-cell.u-sm-size.u-marginR15
+                    div Call: +613 8460 9471
+                    div Office: +613 8460 9471
+                    div Email: mark@markquinn.com.au
+                .Grid-cell.u-sm-size.u-marginR15
+                    div License number 4771-0019-7356
+                    div Copyright (c) Mark Quinn 2017
+                    div Website by Patternworks

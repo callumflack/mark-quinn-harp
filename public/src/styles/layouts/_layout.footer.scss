@@ -1,0 +1,31 @@
+
+
+// --------------------------------------------------------------------------
+//   FOOTER
+// --------------------------------------------------------------------------
+
+
+$footerRowSpacer: $blockSpace * 0.25;
+
+.c-footer {
+    //@include blockSpacePadding();
+    //margin-top: $blockSpace * 2;
+    margin-top: $blockSpace;
+    margin-bottom: $blockSpace * 0.5;
+    position: relative;
+}
+
+.c-footer .c-nav {
+    border-top: 1px solid palette(border);
+    //margin: space(4) 0 space(1);
+    padding-left: 0;
+    padding-right: 0;
+    
+    margin: 0;
+}
+
+.c-footer .c-nav-logo, 
+.c-footer .c-nav-menu li {
+    color: palette("black-40");
+    font-family: $font-text-regular;
+}

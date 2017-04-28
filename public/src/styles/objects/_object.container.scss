@@ -1,0 +1,100 @@
+
+
+// --------------------------------------------------------------------------
+//   CONTAINER OBJECT
+// --------------------------------------------------------------------------
+
+
+@mixin containerWidth(
+    $padded: true,
+    $width: container-width(lg)
+) {
+
+    @if $padded {
+        height: inherit;
+        max-width: $width + ($gutterSpace * 2);
+        padding-left: $gutterSpace;
+        padding-right: $gutterSpace;
+        
+        @include media-breakpoint-up(lg) {
+            max-width: $width + ($gutterSpace * 4);
+            padding-left: $gutterSpace * 2;
+            padding-right: $gutterSpace * 2;
+        }
+        
+    } @else {
+        max-width: $width;
+    }
+}
+
+@mixin containerFrame() {
+    @include clearfix();
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+    p,
+    li,
+    ol {
+        &:last-child,
+        &:last-child a {
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+.o-container {
+    @include containerFrame();
+    @include containerWidth();
+
+    // sizes
+    &--sm {
+        @include containerWidth( $width: container-width(sm) );
+    }
+
+    &--rg {
+        @include containerWidth( $width: container-width(rg) );
+    }
+
+    &--md {
+        @include containerWidth( $width: container-width(md) );
+    }
+
+    &--xl {
+        @include containerWidth( $width: container-width(xl) );
+    }
+    
+    // insets like instrument.com
+    
+    &--tuck {
+        
+    }
+}
+
+
+
+
+@mixin containerWindow() {
+    padding: 21px space(1.5) 20px;
+    //@include media-breakpoint-up(sm) { padding: space(1) space(1.5) space(0.75); }
+}
+
+.c-container--window {
+    @include containerWindow();
+}
+
+.c-container-rule {
+    @include containerFrame();
+    @include containerWidth(false);
+    border: 0;
+    border-top: 1px solid palette(black-10);
+    margin-top: 0;
+    margin-bottom: space(0.75);
+}
+
+.o-column--post {
+    max-width: container-width(xs);
+    // @include when-inside(".o-container")     { margin-left: 0; }
+    // @include when-inside(".o-container--xl") { margin-left: calc( (1200-960) / 2 ); }
+}

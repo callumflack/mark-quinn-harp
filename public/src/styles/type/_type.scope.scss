@@ -1,0 +1,45 @@
+
+
+// --------------------------------------------------------------------------
+//   TYPE: MARKDOWN SCOPES
+// --------------------------------------------------------------------------
+
+
+.s-post {
+    @include media-breakpoint-up(sm) {
+        margin-right: $gutterSpace * 2;
+    }
+
+	h2 {
+		@include textRg();
+        font-family: $font-text-bold;
+
+        &:not(:first-child) {
+            margin-top: $paragraphSpace * 2;
+		}
+
+        &:not(:last-child) {
+            margin-bottom: $paragraphSpace;
+		}
+	}
+
+    hr {
+        border: 0;
+        border-top: 1px solid palette(black-20);
+		margin: $paragraphSpace * 2 0;
+    }
+}
+
+
+.s-aside {
+
+    p {
+		@include textMeta();
+        //font-family: $font-text-bold;
+        margin-bottom: $paragraphSpace * 0.5;
+
+        &:not(:first-child) {
+            //margin-top: $paragraphSpace;
+		}
+    }
+}

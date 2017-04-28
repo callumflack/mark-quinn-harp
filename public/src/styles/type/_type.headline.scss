@@ -1,0 +1,275 @@
+
+
+// --------------------------------------------------------------------------
+//   HEADLINE TYPOGRAPHY
+// --------------------------------------------------------------------------
+
+
+// Common theme…
+
+@mixin headlineTemplate(
+    $mixinSize: headline,
+    $mixinColor: palette(brand),
+    $mixinFont: $font-text-bold,
+    $mixinLetterSpacing: 0.01em,
+    $mixinLineHeight: 1.25,
+    $mixinMarginBottom: 0
+) {
+
+    // standards
+    color: $mixinColor;
+    font-family: $mixinFont;
+    letter-spacing: $mixinLetterSpacing;
+    line-height: $mixinLineHeight;
+    margin-bottom: $mixinMarginBottom;
+
+    // sizes
+    @include typeSize($mixinSize);
+
+    // children
+    > li,
+    > li a,
+    > a {
+        border-bottom: 0;
+        color: currentColor;
+        font-family: inherit;
+        font-size: inherit;
+        margin: 0;
+    }
+}
+
+
+// Component by size…
+
+@mixin display() {
+    @include headlineTemplate(
+        $mixinFont: $font-display,
+        $mixinLetterSpacing: 0,
+        $mixinSize: headline--lg
+    );
+}
+
+@mixin headline() {
+    @include headlineTemplate(
+        $mixinSize: headline,
+        $mixinFont: $font-headline
+    );
+}
+
+@mixin headlineMeta() {
+    @include headlineTemplate(
+        $mixinFont: $font-text-medium,
+        $mixinSize: text,
+        $mixinColor: palette('brand-complement'),
+        $mixinLetterSpacing: 0.02em
+    );
+    //text-transform: uppercase;
+}
+
+@mixin headlineRule() {
+    border-top: 1px solid palette("border");
+    padding-top: space(0.25);
+    margin-bottom: space(1);
+}
+    
+@mixin headlineMetaRuled() {
+    @include headlineMeta();
+    @include headlineRule();
+}
+
+@mixin headlineXs() {
+    @include headlineTemplate(
+        $mixinFont: $font-text-bold,
+        $mixinSize: headline--xs,
+        $mixinColor: palette('black-50')
+    );
+}
+
+@mixin headlineSm() {
+    @include headlineTemplate(
+        $mixinColor: palette(text),
+        $mixinFont: $font-text-medium,
+        $mixinLetterSpacing: 0.02em,
+        $mixinLineHeight: 1.15,
+        $mixinSize: headline--sm
+    );
+}
+
+@mixin headlineSmRegular() {
+    @include headlineTemplate(
+        $mixinFont: $font-text-regular,
+        $mixinLetterSpacing: 0.02em,
+        $mixinSize: headline--sm
+    );
+}
+
+@mixin headlineMd() {
+    @include headlineTemplate(
+        $mixinFont: $font-text-regular,
+        $mixinLineHeight: 1.15,
+        $mixinSize: headline--md
+    );
+}
+
+@mixin headlineMdBlack() {
+    @include headlineTemplate(
+        $mixinFont: $font-text-medium,
+        $mixinSize: headline--md,
+        $mixinColor: palette(black)
+    );
+}
+
+@mixin headlineMdLight() {
+    @include headlineTemplate(
+        $mixinFont: $font-text-light,
+        $mixinSize: headline--md,
+        $mixinLineHeight: 1.35
+    );
+}
+
+@mixin headlineMdGrey() {
+    @include headlineTemplate(
+        $mixinFont: $font-text-regular,
+        $mixinSize: headline--md
+    );
+    color: palette('black-40');
+}
+
+@mixin headlineMdBold() {
+    @include headlineTemplate(
+        $mixinFont: $font-text-bold,
+        $mixinSize: headline--md
+    );
+}
+
+@mixin headlineBlockquote() {
+    @include headlineTemplate(
+        $mixinFont: $font-headline-i,
+        $mixinSize: headline
+    );
+}
+
+
+
+
+
+
+
+
+
+
+
+//UNUSED SO FAR
+
+//@mixin headlineSm() {
+//    @include headlineTemplate(
+//        $mixinSize: headline--sm,
+//        $mixinLetterSpacing: 0.125em,
+//    	$mixinLineHeight: 1.5
+//    );
+//    font-family: $font-text-medium;
+//    text-transform: uppercase;
+//}
+
+
+
+
+
+
+// Component: headline
+// --------------------------------------------------------------------------
+
+.c-display           { @include display(); }
+.c-headline          { @include headline(); }
+.c-headline--sm      { @include headlineSm(); }
+.c-headline--md      { @include headlineMd(); }
+.c-headline--mdLight { @include headlineMdLight(); }
+.c-headline--mdBold  { @include headlineMdBold(); }
+.c-headline--mdBlack { @include headlineMdBlack(); }
+.c-headline--meta    { @include headlineMeta(); }
+.c-headline--quote   { @include headlineBlockquote(); }
+
+
+
+.c-headline--inText {
+    //@include headlineSmRegular();
+    @include headlineMeta();
+    color: palette(brand-complement);
+}
+
+.c-headline--inTextMeta {
+    @include headlineMeta();
+    padding-top: 11px;
+    margin-bottom: space(1) + 5px;
+}
+
+.c-headline--inTextMetaRuled {
+    @include headlineMetaRuled();
+    padding-top: 11px;
+    margin-bottom: space(1) + 5px;
+}
+
+.c-headline--number {
+    border: 2px solid palette("black-20");
+    border-radius: 50%;
+    display: inline-block;
+    height: space(1.5);
+    margin-bottom: space(1);
+    text-align: center;
+    width: space(1.5);
+    
+    span {
+        @include headlineMeta();
+        color: palette("black-30");
+        display: inline-block;
+        line-height: space(1.5);
+        transform: translateY(3px);
+    }
+}
+
+
+
+// Vars
+// --------------------------------------------------------------------------
+
+.c-headline em {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.c-headline--divider {
+    @include headlineSm();
+    text-align: center;
+    
+    span {
+        background-color: palette(background);
+        display: inline-block;
+        font-family: inherit;
+        padding: 0 space(0.5);
+        position: relative;
+        z-index: 2;
+    }
+    
+    &:after {
+        background-color: currentColor;
+        content: "";
+        display: block;
+        height: 1px;
+        position: relative;
+        transform: translateY(-13px);
+    }
+}
+
+
+
+
+
+
+
+
+
+// Component: headline blocks.
+// --------------------------------------------------------------------------
+
+// .Headline-block { > * { @include headline(); } }

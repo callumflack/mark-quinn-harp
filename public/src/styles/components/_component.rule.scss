@@ -1,0 +1,14 @@
+.c-rule {
+    border: 0;
+    //border-bottom: 2px solid rgba(palette(brand),0.7);
+    border-bottom: 1px solid palette("black-7");
+    margin: $blockSpace * 0.9 auto 0;
+}
+
+.c-rule--short {
+    border: 0;
+    //border-bottom: 2px solid rgba(palette(brand),0.7);
+    border-bottom: 2px solid palette("black-10");
+    margin: space(1) auto space(1.25);
+    width: space(2.5);
+}

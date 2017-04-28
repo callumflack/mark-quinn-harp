@@ -1,0 +1,58 @@
+
+
+// --------------------------------------------------------------------------
+// OBJECT: IMAGE BLENDS
+// See: http://codepen.io/Guilh/pen/LEQWev?editors=110
+// See: https://sarasoueidan.com/demos/css-blender/
+// See: http://una.im/CSSgram/
+// See: https://css-tricks.com/css3-gradients/
+// --------------------------------------------------------------------------
+
+
+$darkBlendColor :      rgba( palette(black), 0.5 );
+$initialBlendColor :    rgba( palette(black), 0.25 );
+$greyBlendColor:       rgba( palette(text), 0.15 );
+$lightBlendColor:      rgba( palette(white), 0.4 );
+$whiteBlendColor:      rgba( palette(white), 0.85 );
+
+$brandBlendColor:      rgba( palette(brand), 0.7 );
+$brandLightBlendColor: rgba( palette(brand), 0.1 );
+
+@mixin imageBlend(
+    $gradient: false,
+    $blend: multiply,
+    $color: $initialBlendColor
+) {
+    
+    @if $gradient {
+        //background-color: $color;
+        background-image: linear-gradient( $greyBlendColor, $darkBlendColor 50% ); 
+    } @else {
+        background-color: $color;
+    }
+    
+    background-blend-mode: $blend;
+
+}
+
+.o-imageBlend             { @include imageBlend(); }
+
+.o-imageBlend--deep       { @include imageBlend($color: rgba( palette(brand-purplemud), 0.9 ) ); }
+.o-imageBlend--dark       { @include imageBlend($color: $darkBlendColor); }
+.o-imageBlend--grey       { @include imageBlend($color: $greyBlendColor); }
+.o-imageBlend--light      { @include imageBlend($blend: overlay, $color: $lightBlendColor); }
+.o-imageBlend--whiten     { @include imageBlend($blend: overlay, $color: $whiteBlendColor); filter: grayscale(100%); }
+
+.o-imageBlend--brand      { @include imageBlend($color: $brandBlendColor); }
+.o-imageBlend--brandLight { @include imageBlend($color: $brandLightBlendColor); }
+
+.o-imageBlend--gradient   { @include imageBlend($gradient: true); }
+
+.o-imageBlend--darkGradient:after { 
+    @include o-posFullScreen(absolute);
+    background-image: linear-gradient( rgba( palette(black), 0 ), rgba( palette(black), 1 ) 100% ); 
+    background-image: linear-gradient( rgba( palette(brand-purplemud), 0 ), rgba( palette(brand-purplemud), 1 ) 100% ); 
+    //background-image: linear-gradient( rgba( $color-brand-purplemud-dark, 0 ), rgba( $color-brand-purplemud-dark, 1 ) 100% ); 
+    background-blend-mode: multiply;
+    content: "";
+}

@@ -1,0 +1,60 @@
+
+
+// --------------------------------------------------------------------------
+//   COMPONENT: GRID
+//   See: https://github.com/Heydon/fukol-grids
+// --------------------------------------------------------------------------
+
+
+$gridSpace: $gutterSpace * 0.5;
+
+@mixin grid(
+    $grid: false,
+    $cellPadding: false
+) {
+    display: flex;
+    flex-wrap: wrap;
+    
+    > * {
+        flex: 1 0 5em;
+    }
+    
+    @if $grid {
+        margin: 0 -#{$gridSpace * 0.5};
+        @include media-breakpoint-up(lg) { margin: 0 -#{$gridSpace}; }
+
+        > * {
+            padding: 0 $gridSpace * 0.5;
+            @include media-breakpoint-up(lg) { padding: 0 $gridSpace; }
+        }
+    }
+    
+    @if $cellPadding {
+        margin: -#{$gridSpace};
+        @include media-breakpoint-up(lg) { margin: -#{$gridSpace * 2}; }
+
+        > * {
+            padding: $gridSpace;
+            @include media-breakpoint-up(lg) { padding: $gridSpace * 2; }
+        }
+    }
+}
+
+// applied
+.o-grid {
+    @include grid();
+}
+
+// variables
+.o-grid--spaceBetween { 
+    justify-content: space-between; 
+}
+
+.o-grid--centered { 
+    justify-content: center; 
+}
+
+// with gutter
+.o-grid--withGutter {
+    @include grid(true);
+}

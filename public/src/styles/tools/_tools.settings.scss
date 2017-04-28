@@ -1,0 +1,382 @@
+
+
+// --------------------------------------------------------------------------
+//   VARIABLE SETTINGS
+// --------------------------------------------------------------------------
+
+
+// Namespace for themeing & testing
+// Apply: .#{$namespace}textarea
+// Don't use this method to namespace variables…
+// --------------------------------------------------------------------------
+
+$namespace             : '';
+
+
+// Colours
+// --------------------------------------------------------------------------
+
+$base-black                    : #000;
+$base-white                    : #FFF;
+
+$purple                        : #1B1464;
+$season2016                    : #65bd24;
+
+$palette: (
+    black                      : $base-black,
+    text                       : #525975,
+    text-dark                  : #151515,
+    text-light                 : tint($base-black, 50%),
+    text-faint                 : tint($base-black, 70%),
+    dark                       : tint($base-black, 15%),
+    ash                        : tint($base-black, 22%),
+    black-60                   : tint($base-black, 39%),
+    black-50                   : tint($base-black, 50%),
+    black-40                   : tint($base-black, 60%),
+    black-30                   : tint($base-black, 70%),
+    black-25                   : tint($base-black, 75%),
+    black-20                   : tint($base-black, 80%),
+    black-10                   : tint($base-black, 90%),
+    black-7                    : tint($base-black, 93%),
+    black-5                    : tint($base-black, 96%),
+    black-3                    : tint($base-black, 98%),
+    white                      : $base-white,
+    background                 : #fdfdfd,
+    background-neutral         : #F1F4F4, // #F7F4F4,
+    neutral                    : #F3F2F1,
+    neutral-text               : darken(#f0eeeb, 27%),
+    neutral-dark               : darken(#f0eeeb, 9%),
+    neutral-light              : lighten(#f0eeeb, 4%),
+    
+    brand                      : #1B1464,
+    brand-complement           : #2d94d4,
+    
+    brand-counter              : #887E73,
+    brand-purplemud            : #3e3746,
+    brand-aubergine            : #705475,
+    brand-aubergine-active     : #9C10AA,
+    brand-kermit               : #399600,
+    brand-kermit-active        : #4ECF00,
+    modal-background           : #151515,
+    highlight-action           : $purple,
+    highlight-action-dark      : #A30C43,
+    highlight-edit             : #4ECF00,
+    highlight-edit-dark        : #439213,
+    highlight-brand            : rgb(189, 16, 224),
+    border                     : tint($base-black, 92%),
+    border-dark                : tint($base-black, 80%),
+    warning                    : #FFD40C,
+    bad-news                   : #C60C0C,
+    good-news                  : #00a400,
+    social-facebook            : #4267b2,
+    social-instagram           : #61418b
+);
+
+// color functions
+
+$color-brand-purplemud-dark: darken( palette(brand-purplemud), 12%);
+
+
+// Base size measures
+// --------------------------------------------------------------------------
+
+$base-font-size-unit           : 16;
+$base-line-height-unit         : 1.45;
+$base-font-size                : $base-font-size-unit * 1px;
+$base-line-height              : ($base-font-size-unit * $base-line-height-unit) * 1px; // 24.65
+$space-unit                    : $base-line-height;
+$space                         : $space-unit * 1;
+
+$gutterSpace                   : space(1);
+$paragraphSpace                : space(1);
+$blockSpace                    : 12vh; //5.5vh;
+
+$cardRadius                    : 6px;
+$buttonRadius                  : 4px;
+$labelRadius                   : 3px;
+
+
+
+
+// Widths (based on BS4)
+// --------------------------------------------------------------------------
+
+// BS4 defaults:
+// Removed the BS4 ascending mixin:
+// @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");),
+// $container-max-widths: (
+//     sm: 576px,
+//     md: 720px,
+//     lg: 940px,
+//     xl: 1140px
+// ) !default;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 544px,
+    md: 768px,
+    rg: 840px,
+    lg: 992px,
+    lg-for-container-lg: 1080px,
+    xl: 1200px,
+    su: 1700px
+) !default;
+
+$container-max-widths: (
+    sm: 544px,
+    md: 720px,
+    rg: 840px,
+    lg: 960px,
+    xl: 1400px,
+    su: 1700px,
+) !default;
+
+
+// Font sizes
+// --------------------------------------------------------------------------
+
+$fontsizes: (
+    text--xs: (
+        sm            : 10px,
+        rg            : 11px,
+        lg            : 13px
+    ),
+    text--sm: (
+        sm            : 12px,
+        rg            : 13px,
+        lg            : 14px
+    ),
+    text--meta: (
+        sm            : 12px,
+        rg            : 14px,
+        lg            : 16px
+    ),
+    text: (
+        sm            : 15px,
+        rg            : 17px,
+        lg            : 19px
+    ),
+    text--lg: (
+        sm            : 17px,
+        rg            : 20px,
+        lg            : 23px
+    ),
+    headline--xs: (
+        sm            : 21px,
+        rg            : 24px,
+        lg            : 27px
+    ),
+    headline--sm: (
+        sm            : 18px,
+        rg            : 21px,
+        lg            : 24px
+    ),
+    headline--md: (
+        sm            : 21px,
+        rg            : 24px,
+        lg            : 28px
+    ),
+    headline: (
+        sm            : 27px,
+        rg            : 33px,
+        lg            : 39px
+    ),
+    headline--lg: (
+        sm            : 33px,
+        rg            : 44px,
+        lg            : 54px
+    ),
+    display: (
+        sm            : 40px,
+        rg            : 54px,
+        lg            : 60px
+    )
+);
+
+
+// Other sizes
+// --------------------------------------------------------------------------
+
+$border-radius: (
+    small             : 3px,
+    base              : 4px,
+    large             : 6px
+);
+
+$button-height: (
+    concise           : 36px,
+    base              : 44px,
+    baseWithBorder    : 46px,
+    lg                : 55px
+);
+
+$list-inset: (
+    margin            : space(0.75),
+    padding           : 0
+);
+
+
+// Transitions
+// --------------------------------------------------------------------------
+
+$transition: (
+    duration: (
+        fast         : 50ms,
+        short        : 150ms,
+        long         : 500ms
+    ),
+    type: (
+        thisalso     : cubic-bezier(0.19, 1, 0.22, 1),
+        cubic-static : cubic-bezier(0, -0.1, 1, -0.1),
+        cubic-state  : cubic-bezier(0, 1.1, 1, 1.1),
+        base         : ease-out,
+        fine         : ease-in-out
+    )
+);
+
+
+// Z-indexes
+// --------------------------------------------------------------------------
+
+$z-index: (
+    'modal'     : 8001,
+    'overlay'   : 8000,
+    'dropdown'  : 7000,
+    'second'    : 2000,
+    'first'     : 1000,
+    'default'   : 1,
+    'below'     : -1,
+);
+
+
+// Fonts
+// --------------------------------------------------------------------------
+
+// Define stacks
+$mono-font-stack       : Menlo, Monaco, Consolas, "Liberation Mono", 'Courier New', 'Andale Mono', 'Lucida San Typewriter', 'Lucida Console', monospace;
+$sans-font-stack       : -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", "Droid Sans", "Segoe UI", "Fira Sans", "Ubuntu", sans-serif;
+$serif-font-stack      : Georgia, "Times New Roman", "Times", serif;
+$display-font-stack    : $sans-font-stack;
+
+// Are you referencing the font files rather than using a base64 string?
+$fonts-path           : '../../../assets/fonts/';
+
+// Is your font namespaced?
+$font-sans-namespace   : 'FoundersGrotesk-';
+$font-serif-namespace  : 'Publico-';
+
+// Is the html-level font stack sans or serif?
+$main-font-stack       : $sans-font-stack;
+
+// Create font-file variables
+$sans-thin            : '#{$font-sans-namespace}Light';
+$sans-light           : '#{$font-sans-namespace}Light';
+$sans-book            : '#{$font-sans-namespace}Regular';
+$sans-regular         : '#{$font-sans-namespace}Regular';
+$sans-medium          : '#{$font-sans-namespace}Medium';
+$sans-bold            : '#{$font-sans-namespace}Bold';
+$sans-heavy           : '#{$font-sans-namespace}Heavy';
+//$sans-xbold           : Extrabold;
+$sans-black           : '#{$font-sans-namespace}Heavy';
+//$display              : #{$display-font-name};
+$sans-regular-italic  : '#{$font-sans-namespace}Regular';
+$sans-medium-italic   : '#{$font-sans-namespace}Regular';
+$serif-medium         : '#{$font-serif-namespace}Medium';
+$serif-medium-italic  : '#{$font-serif-namespace}MediumItalic';
+$serif-bold           : '#{$font-serif-namespace}Bold';
+
+
+// Make all font files available
+// Mixin options: $font-family, $file-path, $weight, $style, $formats
+// Ps. This below prints an unwanted space between the path var and the font var:
+// @include font-face($sans-thin, join($fonts-path,$sans-thin) );
+
+@include font-face($sans-thin, '#{$fonts-path}#{$sans-thin}' );
+@include font-face($sans-light, '#{$fonts-path}#{$sans-light}' );
+@include font-face($sans-book, '#{$fonts-path}#{$sans-book}' );
+@include font-face($sans-regular, '#{$fonts-path}#{$sans-regular}' );
+@include font-face($sans-medium, '#{$fonts-path}#{$sans-medium}' );
+@include font-face($sans-bold, '#{$fonts-path}#{$sans-bold}' );
+@include font-face($sans-heavy, '#{$fonts-path}#{$sans-heavy}' );
+@include font-face($sans-black, '#{$fonts-path}#{$sans-black}' );
+@include font-face($serif-medium, '#{$fonts-path}#{$serif-medium}' );
+@include font-face($serif-medium-italic, '#{$fonts-path}#{$serif-medium-italic}' );
+@include font-face($serif-bold, '#{$fonts-path}#{$serif-bold}' );
+
+// Unused, so apply a default to avoid gulp fuckups
+//@include font-face($sans-xbold,   '#{$fonts-path}#{$sans-xbold}' );
+//@include font-face($display, '#{$fonts-path}#{$display}' );
+//@include font-face($sans-regular-italic, '#{$fonts-path}#{$sans-regular-italic}' );
+
+
+// Apply font-file variables to a font-stack.
+// We only use these variables in our classes.
+
+$font-text-thin       : join($sans-thin, $main-font-stack);
+$font-text-light      : join($sans-light, $main-font-stack);
+$font-text-book       : join($sans-book, $main-font-stack);
+$font-text-regular    : join($sans-regular, $main-font-stack);
+$font-text-regular-i  : join($sans-regular, $main-font-stack);
+$font-text-medium     : join($sans-medium, $main-font-stack);
+$font-text-medium-i   : join($sans-medium-italic, $main-font-stack);
+$font-text-bold       : join($sans-bold, $main-font-stack);
+$font-text-heavy      : join($sans-heavy, $main-font-stack);
+$font-text-black      : join($sans-black, $main-font-stack);
+$font-headline        : join($serif-medium, $serif-font-stack);
+$font-headline-i      : join($serif-medium-italic, $serif-font-stack);
+$font-display         : join($serif-bold, $serif-font-stack);
+
+// Unused, so apply a default to avoid gulp fuckups
+$font-text-xbold       : join($sans-bold, $main-font-stack);
+
+
+
+// Object/component default fonts
+// --------------------------------------------------------------------------
+
+//$fonts-path-2           : '/assets/fonts-serif/';
+//
+//$serif                  : NoticiaText-Regular;
+//$serif-i                : NoticiaText-Italic;
+//
+//@include font-face($serif, '#{$fonts-path-2}#{$serif}' );
+//@include font-face($serif-i, '#{$fonts-path-2}#{$serif-i}' );
+//
+//$font-serif             : join($serif, $serif-font-stack);
+//$font-serif-i           : join($serif-i, $serif-font-stack);
+//$font-serif-i           : $serif-i;
+
+//$font-serif             : 'Maitree';
+//$font-serif             : 'Yrsa';
+//$font-serif             : 'Lora';
+//$font-serif             : 'Merriweather';
+//$font-serif             : 'Noticia Text';
+//$font-serif             : $serif;
+
+
+
+// Object/component default fonts
+// --------------------------------------------------------------------------
+
+$font-button           : $font-text-bold;
+
+
+// Cusrsor defaults
+// --------------------------------------------------------------------------
+
+$cursor-disabled       : not-allowed !default;
+
+
+// Suit breakpoint switches
+// Re: '!default'. if the variable has already been assigned to, it won’t be
+// re-assigned, but if it doesn’t have a value yet, it will be given one.
+// See: http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variable_defaults_
+// --------------------------------------------------------------------------
+
+$suit-text-breakpoints      : false !default;
+$suit-flex-breakpoints      : false !default;
+$suit-flexembed-breakpoints : false !default;
+$suit-grid-breakpoints      : true !default;
+$suit-size-breakpoints      : true !default;
+$suit-before-breakpoints    : true !default;
+$suit-after-breakpoints     : true !default;

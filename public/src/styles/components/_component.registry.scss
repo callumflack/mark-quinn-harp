@@ -1,0 +1,265 @@
+    
+
+// --------------------------------------------------------------------------
+//     COMPONENT: MEMBER PROFILE
+// --------------------------------------------------------------------------
+
+
+
+// Hero block with details LEGACY
+// --------------------------------------------------------------------------
+
+//.c-registryHero {
+//}
+//
+//.c-registryHero-flags {
+//    position: absolute;
+//    right: space(1.5);
+//    top: space(1.5);
+//    
+//    .c-button + .c-button {
+//        margin-left: space(0.5);
+//    }
+//}
+//
+//.c-registryHero-progress {
+//    margin-bottom: space(1);
+//}
+//
+//.c-registryHero-details {
+//    //@include container(false);
+//    //flex-basis: 100%;
+//    margin-bottom: space(1.5);
+//}
+//
+//.c-registryHero-details img {
+//    border-radius: 50%;
+//    height: 140px;
+//    margin-bottom: space(0.75);
+//    width: 140px;
+//}
+//
+//.c-registryHero-details h1 {
+//    @include display();
+//    margin-bottom: space(0.25);
+//    text-transform: capitalize;
+//}
+//
+//.c-registryHero-details p {
+//    @include textRg();
+//}
+//
+//.c-registryHero-details p span {
+//    color: palette('black-40');
+//    margin: 0 space(0.25);
+//}
+//
+//.c-registryHero-details h1,
+//.c-registryHero-details p {
+//    color: white;
+//}
+//
+//.c-registryHero-details hr {
+//    margin: space(0.75) auto;
+//    opacity: 0.5;
+//    
+//    @include media-breakpoint-up(lg) {
+//        max-width: 25%;
+//    }
+//}
+//
+//.c-registryHero-details--item {
+//    @include textRg();
+//    color: white;
+//    //text-transform: capitalize;
+//}
+//
+//.c-registryHero-details--item + .c-registryHero-details--item {
+//    margin-top: space(1/6);
+//}
+
+
+
+// Registry give block
+// --------------------------------------------------------------------------
+
+.c-registryGiveFormWrapper {
+    //margin-top: space(3.75);
+    //margin-top: $blockSpace;
+}
+
+.c-registryGiveForm-headline {
+    //@include textLgBold();
+    @include headlineMdGrey();
+    //background-color: darken( palette(brand-aubergine-active), 12% );
+    background-color: rgba( palette(brand-aubergine), 0.25);
+    background-color: rgba( palette(text), 0.75);
+    background-color: desaturate( palette(brand-aubergine-active), 50%);
+    border-top-left-radius: $cardRadius;
+    border-top-right-radius: $cardRadius;
+    color: palette(white);
+    //color: palette(brand-aubergine-active);
+    //font-family: $font-text-bold;
+    //line-height: map-fetch($button-height, base);
+    line-height: 2.75;
+    margin-bottom: 2px;
+    text-align: center;
+}
+
+.c-registryGiveForm {
+    @include headlineMdGrey();
+    background-color: rgba( palette(brand-aubergine), 0.15);
+    border-bottom-left-radius: $cardRadius;
+    border-bottom-right-radius: $cardRadius;
+    display: flex;
+    justify-content: center;
+    padding: space(1.25);
+    
+    > * { flex-shrink: 1; }
+}
+
+.c-registryGiveForm-item {
+    color: palette(brand-aubergine-active);
+    display: inline-block;
+    //padding: space(1.5) 0;
+    position: relative;
+    //line-height: 1.35;
+    line-height: map-fetch($button-height, lg);
+    
+    &:not(:last-child) {
+        margin-right: space(0.5);
+    }
+    
+    &--action {
+        margin-left: auto;
+        margin-left: space(0.75);
+        padding: 0;
+    }
+}
+
+.c-registryGiveForm-select {
+    @include headlineMdGrey();
+    border-color: palette(brand-aubergine-active);
+    color: palette(brand-aubergine-active);
+    line-height: map-fetch($button-height, lg);
+    //padding: 0.5rem 1rem;
+}
+
+//.c-registryGiveForm-button {
+//    height: 100%;
+//    margin-left: auto;
+//    width: 100%;
+//    
+//    @include on-event(true) {
+//        background-color: palette(highlight-action);
+//        border-color: palette(highlight-action);
+//        color: palette(white);
+//    }
+//    
+//    &:after {
+//        margin-left: $arrowMargin * 2;
+//    }
+//}
+
+.c-registryGiveForm-note {
+    @include textXs();
+    bottom: -#{space(1)};
+    color: palette(brand-aubergine-active);
+    //left: space(0.5);
+    position: absolute;
+    //right: space(0.5);
+    text-align: center;
+    
+    @include on-event(true) {
+        text-decoration: none;
+    }
+    
+    @include when-inside(".c-registryGiveForm-item--action") {
+        color: rgba( palette(white), 0.7 );
+        text-align: center;
+    }
+}
+
+
+
+
+// Content block
+// --------------------------------------------------------------------------
+
+.c-registryContent {
+    //margin-top: space(3.75);
+    //margin-top: $blockSpace;
+    
+    &:not(:last-child) { 
+        padding-bottom: space(4.5); 
+    }
+}
+
+.c-registryContent-wrapper {
+    margin-right: space(2);
+}
+
+.c-registryContent-headline {
+    @include textRgBold();
+    @include headlineRule();
+}
+
+.c-registryContent-text + .c-registryContent-headline {
+    margin-top: $blockSpace;
+}
+
+
+
+
+// Share block w/i content block
+// --------------------------------------------------------------------------
+
+.c-registryContent-share,
+.c-registryShare {
+    border-bottom: 1px solid palette("black-10");
+    margin: space(1) 0;
+    padding-bottom: space(1.25);
+    
+    .c-button:not(:first-child) {
+        margin-left: space(0.5);
+    }
+}
+
+
+
+// Registry photographer block
+// --------------------------------------------------------------------------
+
+.c-registryPhotographer {
+    border: 1px solid palette('black-10');
+    display: block;
+    padding: space(0.5) space(0.5) space(0.75);
+    
+    @include on-event(true) {
+        text-decoration: none;
+    }
+}
+
+.c-registryPhotographer img {
+    height: 80px;
+    margin-bottom: 0.5rem;
+    width: 80px;
+}
+
+.c-registryPhotographer h3 {
+    @include headlineSm();
+    //color: palette(text);
+    text-align: center;
+}
+
+.c-registryPhotographer p {
+    color: palette('black-40');
+    margin: 0;
+    max-width: none;
+}
+
+//.c-registryPhotographer .c-hero-hgroup--item {
+//    color: palette('black-40');
+//    font-family: $font-text-medium;
+//    margin-bottom: 0.25rem;
+//}

@@ -1,0 +1,164 @@
+
+
+// --------------------------------------------------------------------------
+//   MEMBER SETTINGS COMPONENT
+// --------------------------------------------------------------------------
+
+
+.c-settings {
+    
+}
+
+
+// Header
+// --------------------------------------------------------------------------
+
+.c-settingsHeader {
+    @include containerWindow();
+    border-bottom: 1px solid palette("black-10");
+    border-top: 1px solid palette("black-10");
+    padding-top: space(2.5);
+    padding-bottom: space(0.75);
+    position: relative;
+
+    .c-headline--md {
+        //color: palette(brand-purplemud);
+        color: palette(text);
+    }
+}
+
+//.c-settings-backButton {
+//    @include buttonStyle();
+//    padding-left: 0;
+//    position: absolute;
+//    top: space(2.5) - 3px;
+//    
+//    @include on-event(true) {
+//        background-color: transparent;
+//        border-color: transparent;
+//        color: palette(black-40);
+//        font-family: $font-text-medium;
+//    }
+//}
+
+
+// Block
+// --------------------------------------------------------------------------
+
+.c-settingsBlock {
+    @include container( $width: container-width(md) );
+    margin-top: space(2);
+}
+
+.c-settingsBlock + .c-settingsBlock {
+    //margin-top: space(3);
+}
+
+.c-settingsBlock-header {
+    background-color: palette(background-neutral);
+    border: 1px solid palette("border");
+    padding: space(0.5)    space(1);
+    
+    &.is-published { background-color: palette(highlight-action); border-color: palette(highlight-action); h3 { color: palette(white); } }
+    &.is-draft     { background-color: palette(highlight-action-dark); border-color: palette(highlight-action-dark); h3 { color: palette(white); } }
+}
+
+.c-settingsBlock-header h3 {
+    @include textRg();
+    color: palette(brand);
+    font-family: $font-text-medium;
+}
+
+
+
+
+
+// Status label
+// --------------------------------------------------------------------------
+
+@mixin statusLabelTheme(
+    $color
+) {
+    @include on-event(true) {
+        background-color: $color;
+        //border-color: $color;
+        //color: $color;
+    }
+}
+
+.c-registryStatus {
+    @include textXsBold();
+    border-radius: $labelRadius;
+    color: palette(white);
+    display: inline-block;
+    margin-left: space(1);
+    margin-top: 3px;
+    padding: 4px 8px;
+    text-transform: uppercase;
+    
+    &.is-published { @include statusLabelTheme( palette(highlight-action) ); }
+    &.is-draft     { @include statusLabelTheme( palette(highlight-action-dark) ); }
+    
+    @include when-inside(".c-card-visualStatusContainer") {
+        margin: space(0.5) space(0.5) auto auto;
+    }
+}
+
+.c-registryStatus2 {
+    @include textXsBold();
+    border: 1px solid currentColor;
+    border-radius: $labelRadius;
+    color: palette(white);
+    display: inline-block;
+    margin-right: space(0.5);
+    padding: 4px 8px;
+    position: relative;
+    text-transform: uppercase;
+    top: -1px;
+    
+    &.is-published { @include statusLabelTheme( palette(highlight-action) ); }
+    &.is-draft     { @include statusLabelTheme( palette(highlight-action-dark) ); }
+}
+
+.c-registryStatusStripe {
+    @include textXsHeavy();
+    border-radius: $labelRadius;
+    color: palette(white);
+    padding: 4px space(1.5);
+    text-align: right;
+    text-transform: uppercase;
+    
+    &.is-published { @include statusLabelTheme( palette(highlight-action) ); }
+    &.is-draft     { @include statusLabelTheme( palette(highlight-action-dark) ); }
+    
+    @include when-inside(".c-card-visualStatusContainer") {
+        margin: space(0.5) space(0.5) auto auto;
+    }
+}
+
+
+// Status save button
+// --------------------------------------------------------------------------
+
+@mixin statusButtonTheme(
+    $color
+) {
+    @include on-event(true) {
+        background-color: $color;
+        border-color: $color;
+    }
+}
+
+.c-settings-button {
+    float: right;
+    margin-top: space(1);
+    padding: 0 space(1.5);
+    
+    &--draft   { @include statusButtonTheme( palette(highlight-action-dark) ); }
+    &--archive { @include statusButtonTheme( palette("black-40") ); }
+    //&--archive { @include on-event(true) { background-color: palette(black-20); } }
+}
+
+.c-settings-button + .c-settings-button {
+    margin-right: space(0.5);
+}

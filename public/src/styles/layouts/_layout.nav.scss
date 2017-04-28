@@ -1,0 +1,205 @@
+
+
+// --------------------------------------------------------------------------
+//   NAV LAYOUT
+// --------------------------------------------------------------------------
+
+
+.c-nav {
+    @include containerWindow();
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    z-index: 1;
+
+    padding: 35px space(1.5);
+
+    //@include media-breakpoint-up(sm) { max-width: container-width(xl); }
+    //@include media-breakpoint-up(lg) { max-width: none; }
+    //@include media-breakpoint-up(lg) { padding: 0 4%; }
+    //@include media-breakpoint-up(xl) { padding: 0 12%; }
+    //@include media-breakpoint-up(su) { padding: 0 18%; }
+}
+
+.c-nav p,
+.c-nav ul {
+    margin-bottom: 0;
+    color: #fff;
+}
+
+.c-nav a {
+    padding: space(1) 0;
+    
+    @include on-event() {
+        //color: palette(brand-aubergine-active);
+        text-decoration: none;
+    }
+}
+
+.c-nav-menu {
+    @include listInline();
+}
+
+.c-nav-menu li {
+    line-height: 36px;
+    //font-weight: bold;
+}
+
+.c-nav-menu li:not(:last-child) {
+    margin-right: space(0.75);
+}
+
+.c-nav-memberTrigger {
+    border: 1px solid palette(text);
+    border-radius: 50%;
+    display: inline-block;
+    fill: palette(text);
+    line-height: 34px;
+    letter-spacing: 0;
+    //margin-right: space(0.75);
+    padding: 0 !important;
+    transform: translateY(-1px);
+    vertical-align: middle;
+    width: 36px;
+    
+    > svg {
+        //transform: translate(5px,2px);
+        transform: translate(5px,-3px);
+    }
+}
+
+.c-nav-logo, 
+.c-nav-menu li {
+    @include textRg();
+    color: white;
+    font-family: $font-text-medium;
+}
+
+.c-nav--floating {
+    position: absolute;
+    width: 100%;
+}
+
+
+
+
+// Member links
+// --------------------------------------------------------------------------
+
+.c-nav-memberLinks {
+    margin-left: space(0.25);
+    
+    li:not(:last-child) {
+        margin-right: space(0.25);
+    }
+}
+
+.c-nav-memberLinks .c-button {
+    border-radius: map-fetch($Button, Button-height) * 0.5;
+    line-height: 37px;
+    min-width: space(4.5);
+    //padding: map-fetch($Button, Button-padding);
+    padding: 0;
+    
+    @include on-event() {
+        background-color: palette(highlight-action-dark);
+        border-color: palette(highlight-action-dark);
+        color: map-fetch($Button, Button-color);
+    }
+}
+
+.c-nav-memberLinks .c-button--reversed {
+    background-color: transparent;
+    border-color: currentColor;
+    color: palette(highlight-action);
+    
+    @include on-event() {
+        background-color: transparent;
+        //border-color: currentColor;
+        color: palette(highlight-action-dark);
+    }
+}
+
+
+
+// Member dropdown
+// --------------------------------------------------------------------------
+
+.c-navContainer {
+    backface-visibility: hidden;
+    opacity: 0;
+    outline: 0;
+    position: absolute;
+    transform: scale(0);
+    transition: z-index 0s, opacity 500ms ease-out;
+    z-index: map-fetch($z-index, 'below');
+    
+    &.is-active {
+        opacity: 1;
+        right: space(1);
+        top: space(2.5);
+        top: 52px;
+        transform: scale(1);
+        transition: z-index 0s, opacity 150ms ease-out;
+        z-index: map-fetch($z-index, 'modal');
+    }
+}
+
+.translateY {
+    transform: translateY(0);
+    transition: all ease-out 150ms;
+
+    @include when-inside(".is-active") {
+        transform: translateY(16px);
+        transition: all ease-out 150ms;
+    }
+}
+
+$triangleHeight: 11px;
+
+.c-nav-triangle {
+    display: block;
+    line-height: $triangleHeight;
+    position: absolute;
+    text-align: right;
+    //top: 4px;
+    width: 91%;
+    z-index: 1;
+    
+    //text-align: center;
+    //width: 100%;
+}
+
+.c-nav-member {
+    @include listClean();
+    background: palette(white);
+    border: 1px solid palette("black-10");
+    border-radius: $buttonRadius;
+    box-shadow: 0 18px 30px 0 rgba(0,0,0,0.12);
+    color: palette(text);
+    display: inline-block;
+    margin-top: $triangleHeight;
+    outline: 0;
+    position: relative;
+    text-align: left;
+    //transform: translateY(0);
+    transition: all ease-out 500ms;
+    width: 200px;
+
+    //@include when-inside(".is-active") {
+    //    transform: translateY(16px);
+    //    transition: all ease-out 150ms;
+    //}
+    
+    li {
+        &:not(:last-child) {
+            border-bottom: 1px solid palette("black-10");
+        }
+    }
+    
+    li a {
+        @include textRgMedium();
+        display: block;
+        padding: space(0.75);
+    }
+}

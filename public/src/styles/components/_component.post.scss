@@ -1,0 +1,200 @@
+
+
+// --------------------------------------------------------------------------
+//   POST COMPONENT
+// --------------------------------------------------------------------------
+
+
+// Story link blocks
+// --------------------------------------------------------------------------
+
+$storyHeight: 40vh;
+
+.c-stories {
+    background-color: palette("black-10");
+    //background-color: rgba( palette(brand-purplemud), 0.4 );
+    //background-color: rgba( palette(brand-aubergine), 0.7 );
+    //background-color: darken( palette(brand-purplemud), 20%);
+    background-color: $color-brand-purplemud-dark;
+    background-color: black;
+    background-color: transparent;
+    //height: calc($storyHeight + space(4));
+    //padding: space(2) 0;
+    //padding-bottom: space(2);
+    margin-top: $blockSpace;
+}
+
+.c-storyContainer {
+    
+}
+
+.c-story {
+    display: flex;
+    flex-direction: column;
+    height: $storyHeight;
+    position: relative;
+    
+    &:before {
+        @include o-posFullScreen(absolute);
+        background-image: linear-gradient(to bottom, rgba( palette(black), 0 ) 40%, rgba( palette(black), 0.6 ) 100%);
+        content: "";
+    }
+
+    &--half {
+        height: $storyHeight * 0.5;
+    }
+    
+    &--halfWithoutHeadline {
+        height: $storyHeight * 0.5;
+        
+        &:before {
+            content: initial;
+        }
+    }
+}
+
+.c-story-info {
+    padding: space(1);
+    position: relative;
+    
+    @include media-breakpoint-up(sm) {
+        //padding: space(1) space(4) space(1) space(1);
+        width: 88%;
+    }
+    
+    p {
+        color: palette("black-10");
+    }
+    
+    @include when-inside(".c-story--half") {
+        padding: space(0.5) space(0.75);
+    }
+}
+
+.c-story-title {
+    @include headlineXs();
+    color: palette(white);
+    margin-bottom: space(0.25);
+}
+
+.c-hero--pathway {
+    .c-stories {
+        margin-top: $blockSpace * 0.5;
+    }
+    
+    .c-story-info {
+        width: 100%;
+    }
+
+    .c-story-title {
+        margin-bottom: 0;
+    }
+}
+
+.c-story-link {
+    @include textSmBold();
+    border-top: 1px solid rgba( palette(brand-aubergine), 0.5);
+    color: palette(brand-aubergine);
+    display: inline-block;
+    padding-top: 6px;
+}
+
+
+// Posts
+// --------------------------------------------------------------------------
+
+.c-posts {
+}
+
+.c-post {
+}
+
+.c-post--cell {
+    margin-bottom: $blockSpace;
+}
+
+.c-post-image {
+    display: block;
+}
+
+.c-post-title {
+    margin-top: space(1.25);
+    text-align: center;
+    
+    a {
+        @include headlineXs();
+        color: palette(brand-aubergine);
+    }
+}
+
+.c-post-detailsBlock {
+    border-bottom: 1px solid palette(border);
+    margin: $blockSpace * 0.5 0;
+    padding-bottom: $blockSpace * 0.5;
+}
+
+.c-post-meta {
+    @include textSmLight();
+    margin-top: space(0.25);
+    margin-bottom: space(1);
+    text-align: center;
+    
+    a {
+        border-bottom: 1px solid palette(text-light);
+        color: palette(text);
+        //text-decoration: underline;
+    }
+}
+
+.c-post-author {
+    @include textSmLight();
+    //display: inline-block;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    
+    img {
+        border-radius: 50%;
+        display: block;
+        height: space(3);
+        margin: 0 auto 6px;
+    }
+    
+    span {
+        font-family: $font-text-bold;
+    }
+}
+
+.c-post-content {
+    @include container( $width: container-width(sm) );
+    
+    a p {
+        @extend .o-arrowEast;
+    }
+    
+    p img {
+        margin-left: 0;
+        margin-top: space(1);
+        margin-bottom: space(1);
+        max-width: container-width(rg);
+        
+        @include media-breakpoint-up(rg) {
+            //margin-left: calc( (576/840) * -50% );
+            //margin-left: calc( (576/840) * 0.5 * 100% );
+            margin-left: -34.2857143%;
+            //margin-left: (840-576) * -0.5px;
+        }
+    }
+    
+    @include when-inside(".c-post") {
+        p:first-of-type {
+            @include textLg();
+            color: palette(black);
+            
+        }
+    }
+}
+
+.c-post-pathway {
+    margin: $blockSpace * 2 0 $blockSpace;
+}

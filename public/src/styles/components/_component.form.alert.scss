@@ -1,0 +1,30 @@
+
+
+// --------------------------------------------------------------------------
+//   TITLE
+// --------------------------------------------------------------------------
+
+
+#flash-message {
+    position: relative;
+    top: -1px;
+}
+
+.c-alert {
+    border-radius: 0;
+    border-top: 1px solid transparent;
+    padding: 15px;
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: -1px;
+}
+
+.c-alert-danger {
+    background-color: rgba( palette(bad-news), 0.1 );
+    color: palette(bad-news);
+}
+
+.c-alert-success {
+    background-color: rgba( palette(good-news), 0.1 );
+    color: palette(good-news);
+}
