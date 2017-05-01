@@ -38,6 +38,12 @@
 
 .c-nav-menu {
     @include listInline();
+
+    @include media-breakpoint-down(sm) {
+        @include when-inside("nav[role="banner"]") {
+            display: none;
+        }
+    }
 }
 
 .c-nav-menu li {

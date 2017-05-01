@@ -1,4 +1,4 @@
-nav.c-nav.c-nav--medium.c-nav--floating
+nav.c-nav.c-nav--medium.c-nav--floating(role='banner')
     .c-nav-logo #{site_title}
     ul.c-nav-menu
         li: a(href='#why', data-scroll) Why Mark?
@@ -105,7 +105,7 @@ main.Main(role="main")
 
     footer.c-footer
         .o-container
-            nav.c-nav
+            nav.c-nav(role='banner')
                 .c-nav-logo #{site_title}
                 ul.c-nav-menu.u-textRight
                     li: a(data-scroll='', href='#why') Why Mark?
@@ -125,3 +125,14 @@ main.Main(role="main")
                     div License number 4771-0019-7356
                     div Copyright (c) Mark Quinn 2017
                     div Website by Patternworks
+
+    .c-nav-trigger.u-sm-hide(data-modal-toggle='') Menu
+    .o-modal(tabindex="-1" role="dialog" aria-labelledby="mobileNav" data-modal="")
+        .o-modal-dialog.o-aligner(role="document")
+            .o-aligner-item
+                .Nav-logo
+                    a(href="/") #{site_title}
+                .Nav-menu
+                    li: a(data-scroll='', href='#why') Why Mark?
+                    li: a(data-scroll='', href='#testimonials') What people say
+                    li: a(data-scroll='', href='#contact') Contact
