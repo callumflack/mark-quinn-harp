@@ -1,0 +1,32 @@
+.c-slider {
+    position: relative;
+
+    blockquote {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: auto;
+        background-color: #f5f5f5;
+
+        &:target {
+            transition: all .5s ease-in-out;
+            opacity: 1;
+        }
+        & ~ .default-quote {
+            opacity: 0;
+        }
+
+        &:not(:target) { 
+        //&:target ~ img#quote-3    {
+            position: relative;
+            opacity: 0;
+        }
+
+        // set initially visible
+        //&:first-child {
+        &.default-quote {
+            position: absolute;
+            opacity: 1;
+         }
+    }
+}

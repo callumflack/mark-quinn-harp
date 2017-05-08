@@ -75,8 +75,17 @@ main.Main(role="main")
             //- h2.c-headline--inText What people say about working with Mark
             h2.c-headline--inText What people say
             hr.c-rule--short
-            blockquote.c-headline--quote
-              | Mark was able to help where I felt others had not connected or understood me. Our discussions were easy, respectful. And in the end, what helped me was simply knowing what I could do for myself, rather than what I was doing wrong.
+            .c-slider
+                blockquote#quote-1.c-headline--quote.default-quote
+                  | 1. Mark was able to help where I felt others had not connected or understood me. Our discussions were easy, respectful. And in the end, what helped me was simply knowing what I could do for myself, rather than what I was doing wrong.
+                blockquote#quote-2.c-headline--quote
+                  | 2. Mark was able to help where I felt others had not connected or understood me. Our discussions were easy, respectful. And in the end, what helped me was simply knowing what I could do for myself, rather than what I was doing wrong.
+                blockquote#quote-3.c-headline--quote
+                  | 3. Mark was able to help where I felt others had not connected or understood me. Our discussions were easy, respectful. And in the end, what helped me was simply knowing what I could do for myself, rather than what I was doing wrong.
+            ul
+                li: a(href='#quote-1', aria-label='Quote 1') 1
+                li: a(href='#quote-2', aria-label='Quote 2') 2
+                li: a(href='#quote-3', aria-label='Quote 3') 3
 
     .o-container.o-container--sm.c-block#contact
         .u-textCenter
