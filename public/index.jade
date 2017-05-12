@@ -69,23 +69,32 @@ main.Main(role="main")
                     a.c-headline--inText.u-textLeft(href='/') Read more about Marks career &rarr;
             .Grid-cell.u-sm-size1of2.u-smDown-flexOrderFirst.u-smDown-spaceB
                 img(src='assets/images/markquinn.jpg', style='opacity: 0.8;')
-            
+
     .c-block.c-block--neutral#testimonials
         .o-container.u-textCenter
-            //- h2.c-headline--inText What people say about working with Mark
             h2.c-headline--inText What people say
             hr.c-rule--short
-            .c-slider
-                blockquote#quote-1.c-headline--quote.default-quote
-                  | 1. Mark was able to help where I felt others had not connected or understood me. Our discussions were easy, respectful. And in the end, what helped me was simply knowing what I could do for myself, rather than what I was doing wrong.
-                blockquote#quote-2.c-headline--quote
-                  | 2. Mark was able to help where I felt others had not connected or understood me. Our discussions were easy, respectful. And in the end, what helped me was simply knowing what I could do for myself, rather than what I was doing wrong.
-                blockquote#quote-3.c-headline--quote
-                  | 3. Mark was able to help where I felt others had not connected or understood me. Our discussions were easy, respectful. And in the end, what helped me was simply knowing what I could do for myself, rather than what I was doing wrong.
-            ul
-                li: a(href='#quote-1', aria-label='Quote 1') 1
-                li: a(href='#quote-2', aria-label='Quote 2') 2
-                li: a(href='#quote-3', aria-label='Quote 3') 3
+            .c-carousel-tabs
+                .c-carousel-tab
+                    input#tab-1(type='radio', name='tabgroup' checked)
+                    label(for='tab-1')
+                    .c-carousel-content
+                        blockquote.c-headline--quote
+                          | 1. Mark was able to help where I felt others had not connected or understood me. Our discussions were easy, respectful. And in the end, what helped me was simply knowing what I could do for myself, rather than what I was doing wrong.
+
+                .c-carousel-tab
+                    input#tab-2(type='radio', name='tabgroup')
+                    label(for='tab-2')
+                    .c-carousel-content
+                        blockquote.c-headline--quote
+                          | 2. Mark was able to help not connected or understood me. Our discussions were easy, respectful. And in the end, what helped me was simply knowing what I could do for myself, what I was doing wrong.
+
+                .c-carousel-tab
+                    input#tab-3(type='radio', name='tabgroup')
+                    label(for='tab-3')
+                    .c-carousel-content
+                        blockquote.c-headline--quote
+                          | 3. I felt others had not connected or understood me. Our discussions were easy, respectful. And in the end, was simply knowing what I could do for myself, rather than what I was doing wrong.
 
     .o-container.o-container--sm.c-block#contact
         .u-textCenter
