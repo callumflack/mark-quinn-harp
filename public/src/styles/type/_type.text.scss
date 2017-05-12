@@ -25,7 +25,7 @@
     $mixinSize: text,
     $mixinColor: palette(text),
     $mixinFont: $font-text-regular,
-    $mixinLetterSpacing: 0.01em,
+    $mixinLetterSpacing: 0.015em,
     $mixinLineHeight: $base-line-height-unit
 ) {
 
@@ -96,7 +96,7 @@
     );
 }
 
-@mixin textSmLight() {
+@mixin textSmGrey() {
     @include textTemplate(
         $mixinSize: text--sm,
         $mixinColor: palette(text-light)
@@ -213,7 +213,7 @@
 
 .c-text-block   { > * { @include textRg(); } }
 .c-textSm-block { > * { @include textSm(); } }
-.c-textSmLight-block { > * { @include textSmLight(); } }
+.c-textSmGrey-block { > * { @include textSmGrey(); } }
 
 .c-text-block--footer {
     @include listClean();

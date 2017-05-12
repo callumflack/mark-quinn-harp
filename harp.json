@@ -2,19 +2,13 @@
   "globals": {
     "site_title": "Mark Quinn, Psychologist",
     "site_tagline": "Creating digital brands that resonate.",
-    "site_description": "Fast, easy and delightful websites and apps that help companies discover, design and build great customer experiences.",
-    "site_keywords": "web design, graphic design, user experience design, web development",
-    "site_url": "http://www.patternworks.com.au",
-    "site_author": "Callum Flack",
-    "email": "hi@patternworks.com.au",
-    "email_form": "mailto:hi@patternworks.com.au?subject=Project inquiry&body=Hi Patternworks,%0D%0A%0D%0AI need: a new website / a website redesign / to fix an old website / other: ______. Our site is ______.%0D%0A%0D%0AHow do we proceed from here?%0D%0A%0D%0AKind regards, Your Name",
+    "site_description": "Mark Quinn, Psychologist, can help you discover new choices, find clarity, transform old patterns and experience real change.",
+    "author": "https://www.patternworks.com.au",
+    "email": "mark@markquinnpsychologist.com.au",
     "phone": "+61(0) 408 767 540",
-    "twitter": "https://twitter.com/patternworks_",
-    "instagram": "https://instagram.com/patternworks_",
-    "medium": "https://medium.com/patternworks",
-    "linkedin": "www.linkedin.com/in/callumflack",
+    "abn": "84 440 279 228",
     "logo": "/images/logo.png",
     "analytics_account": "UA-59062441-1",
-    "google_site_verification": "ifWumnWk5DISF1SS1MIj5MTsGLpBrixB0KJP4OH-MKo"
+    "google_site_verification": "I-QiX4F05ENVM-GGIaEi3IF7_CixA0-2kEeu73HEYi0"
   }
 }

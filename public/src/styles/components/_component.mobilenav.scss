@@ -4,7 +4,7 @@ $headerInset: space(1.5);
 $headerInsetMobile: space(0.75);
 $footerColor: #677985;
 
-.Nav {
+.c-mobileNav {
     border-bottom: 1px solid palette(black-10);
     position: relative;
 
@@ -14,7 +14,7 @@ $footerColor: #677985;
     }
 }
 
-.Nav-logo {
+.c-mobileNav-logo {
     @include o-aligner();
 
     a {
@@ -35,7 +35,7 @@ $footerColor: #677985;
     }
 }
 
-.Nav-menu {
+.c-mobileNav-menu {
     @include o-aligner();
     @include listInline();
 
@@ -72,7 +72,7 @@ $footerColor: #677985;
 // Mobile nav
 // --------------------------------------------------------------------------
 
-.o-modal .Nav-logo {
+.o-modal .c-mobileNav-logo {
     @include display();
     text-align: center;
     justify-content: center;
@@ -85,7 +85,7 @@ $footerColor: #677985;
     }
 }
 
-.o-modal .Nav-menu {
+.o-modal .c-mobileNav-menu {
     flex-direction: column;
 
     li {

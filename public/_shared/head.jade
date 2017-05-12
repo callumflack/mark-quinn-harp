@@ -2,8 +2,7 @@ head
     //- basics
     meta(charset="UTF-8")
     meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
-    title= locals.title ? title + " | " + site_title : site_title
-    //- title Mark Quinn, Psychologist | Canberra, Australia
+    title= locals.title ? title + " | " + site_title : site_title + " |  Canberra, Australia"
 
     //- seo
     if current.path[0] === "index"
@@ -29,6 +28,8 @@ head
     //- link(rel='manifest', href='/assets/images/favicons/manifest.json')
     //- link(rel='mask-icon', href='/assets/images/favicons/safari-pinned-tab.svg', color='#000000')
     //- meta(name='theme-color', content='#000000')
+    
+    <meta name="google-site-verification" content="I-QiX4F05ENVM-GGIaEi3IF7_CixA0-2kEeu73HEYi0" />
 
     //- assets
     link(rel='stylesheet', href='src/styles/application.css')

@@ -6,23 +6,23 @@
 
 
 .Grid--withGutter {
-	margin: 0 -#{$gutterSpace * 0.5};
-    @include media-breakpoint-up(lg) { margin: 0 -#{$gutterSpace}; }
+    margin: 0 -#{$gutterSpace * 1};
+    //@include media-breakpoint-up(lg) { margin: 0 -#{$gutterSpace}; }
 }
 
 .Grid--withGutter > .Grid-cell {
-	padding: 0 $gutterSpace * 0.5;
-    @include media-breakpoint-up(lg) { padding: 0 $gutterSpace; }
+    padding: 0 $gutterSpace * 1;
+    //@include media-breakpoint-up(lg) { padding: 0 $gutterSpace; }
 }
 
 .Grid--withFullGutter {
-	margin: -#{$gutterSpace * 0.5};
-    @include media-breakpoint-up(lg) { margin: -#{$gutterSpace}; }
+    margin: -#{$gutterSpace * 1};
+    //@include media-breakpoint-up(lg) { margin: -#{$gutterSpace}; }
 }
 
 .Grid--withFullGutter > .Grid-cell {
-	padding: $gutterSpace * 0.5;
-    @include media-breakpoint-up(lg) { padding: $gutterSpace; }
+    padding: $gutterSpace * 1;
+    //@include media-breakpoint-up(lg) { padding: $gutterSpace; }
 }
 
 
@@ -39,26 +39,26 @@
 // sm
 
 .Grid--withGutterSm {
-	margin: 0 -#{$gutterSpace * 0.25};
-    @include media-breakpoint-up(lg) { margin: 0 -#{$gutterSpace * 0.5}; }
+    margin: 0 -#{$gutterSpace * 0.5};
+    //@include media-breakpoint-up(lg) { margin: 0 -#{$gutterSpace * 0.5}; }
 }
 
 .Grid--withGutterSm > .Grid-cell {
-	padding: 0 $gutterSpace * 0.25;
-    @include media-breakpoint-up(lg) { padding: 0 $gutterSpace * 0.5; }
+    padding: 0 $gutterSpace * 0.5;
+    //@include media-breakpoint-up(lg) { padding: 0 $gutterSpace * 0.5; }
 }
 
 
 // lg
 
 .Grid--withGutterLg {
-	margin: 0 -#{$gutterSpace};
-    @include media-breakpoint-up(lg) { margin: 0 -#{$gutterSpace * 3}; }
+    margin: 0 -#{$gutterSpace * 2};
+    //@include media-breakpoint-up(lg) { margin: 0 -#{$gutterSpace * 3}; }
 }
 
 .Grid--withGutterLg > .Grid-cell {
-	padding: 0 $gutterSpace;
-    @include media-breakpoint-up(lg) { padding: 0 $gutterSpace * 3; }
+    padding: 0 $gutterSpace * 2;
+    //@include media-breakpoint-up(lg) { padding: 0 $gutterSpace * 3; }
 }
 
 

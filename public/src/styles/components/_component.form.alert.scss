@@ -7,16 +7,16 @@
 
 #flash-message {
     position: relative;
-    top: -1px;
 }
 
 .c-alert {
-    border-radius: 0;
-    border-top: 1px solid transparent;
-    padding: 15px;
+    @include textRg();
+    border-radius: 3px;
+    border: 1px solid transparent;
+    line-height: map-fetch($button-height, baseWithBorder);
+    margin-bottom: space(0.5);
+    padding: 4px space(1) 0;
     position: relative;
-    margin-bottom: 20px;
-    margin-top: -1px;
 }
 
 .c-alert-danger {

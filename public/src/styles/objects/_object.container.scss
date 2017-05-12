@@ -7,20 +7,21 @@
 
 @mixin containerWidth(
     $padded: true,
-    $width: container-width(lg)
+    $width: container-width(rg)
 ) {
 
     @if $padded {
         height: inherit;
-        max-width: $width + ($gutterSpace * 2);
+        //max-width: $width + ($gutterSpace * 2);
+        max-width: calc( #{$width} + (#{$gutterSpace} * 2) );
         padding-left: $gutterSpace;
         padding-right: $gutterSpace;
         
-        @include media-breakpoint-up(lg) {
-            max-width: $width + ($gutterSpace * 4);
-            padding-left: $gutterSpace * 2;
-            padding-right: $gutterSpace * 2;
-        }
+        //@include media-breakpoint-up(lg) {
+        //    max-width: $width + ($gutterSpace * 4);
+        //    padding-left: $gutterSpace * 2;
+        //    padding-right: $gutterSpace * 2;
+        //}
         
     } @else {
         max-width: $width;

@@ -87,7 +87,7 @@
 
 @mixin headlineSm() {
     @include headlineTemplate(
-        $mixinColor: palette(text),
+        $mixinColor: palette(brand),
         $mixinFont: $font-text-medium,
         $mixinLetterSpacing: 0.02em,
         $mixinLineHeight: 1.15,
@@ -147,6 +147,14 @@
         $mixinFont: $font-headline-i,
         $mixinSize: headline
     );
+    
+    span {
+        @include typeSize(headline--sm);
+        color: palette(text-light);
+        display: block;
+        font-family: $font-text-regular;
+        margin-top: space(1);
+    }
 }
 
 

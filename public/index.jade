@@ -1,5 +1,5 @@
 nav.c-nav.c-nav--medium.c-nav--floating(role='banner')
-    .c-nav-logo #{site_title}
+    .c-nav-logo #{site_title} #[span | ] Canberra
     ul.c-nav-menu
         li: a(href='#why', data-scroll) Why Mark?
         li: a(href='#testimonials', data-scroll) What people say
@@ -9,14 +9,14 @@ header.c-hero
     .FlexEmbed
         .FlexEmbed--ratio.c-hero-ratioIndex
         .FlexEmbed-content
-            .o-coverImage.c-hero--dark(style='background-image: url("assets/images/hero-1.jpg")')
+            .o-coverImage.c-hero--dark(style='background-image: url("assets/images/hero.jpg")')
                 .o-aligner
                     .o-aligner-item
                         .c-hero-hgroup
                             h1.c-hero-display Function better. Choose better. Live better.
                             // <h3 class='c-hero-headline u-sm-size5of6 u-centerBlock u-marginT'>Discover new choices. Find new clarity. Transform old patterns. Experience change.</h3>
                             h3.c-hero-headline.u-sm-size5of6.u-centerBlock.u-marginT
-                                | Mark Quinn, Psychologist, can help you discover new choices, find clarity, transform old patterns and experience real change.
+                                | #{site_description}
 
 main.Main(role="main")
     .o-container.o-container--md.c-block.u-textCenter#why
@@ -57,18 +57,23 @@ main.Main(role="main")
         
         hr.c-rule
     
-    .o-container.c-block
+    .o-container.o-container--md.c-block
+        //- h1.c-headline.u-textCenter Over two decades #[span.u-lg-lineBreak of experience] #[span.u-lg-lineBreak and empathy]
+        h1.c-headline.u-textCenter Over two decades of experience, knowledge and empathy
+
+    .o-container.c-block.c-block--half
         .Grid.Grid--withGutterLg.o-aligner
-            .Grid-cell.u-sm-size1of2
-                h1.c-headline.u-smDown-textCenter Over two decades of experience, knowledge and empathy
-                p.u-spaceT
-                | &quot;Each individual has specific outcomes that they hope to achieve through the therapeutic process, although they may not know this to begin with. Often part of the process of listening and collaborating involves identifying and clarifying these outcomes. At other times it involves focussing on interrupting certain patterns of thinking and/or behaving in order to begin to create the desired change. In each of these situations I aim to assist my clients to achieve a greater sense of agency. I like to see clients begin to have more choices about creating a future life that they want.&quot;
-                //- p.u-spaceT
-                    //- | Mark Quinn is a registered psychologist with 23 years of experience in Solution-Oriented approaches to Brief Therapy. He has worked with a broad range of client populations, including mental health, adolescents, families and couples. Mark has worked in a variety of settings including university counselling, community counselling centres and private practice. He has consulted with, supervised and
-                .u-marginT
-                    a.c-headline--inText.u-textLeft(href='/') Read more about Marks career &rarr;
-            .Grid-cell.u-sm-size1of2.u-smDown-flexOrderFirst.u-smDown-spaceB
+            .Grid-cell.u-sm-size7of12
+                p Mark Quinn is a registered psychologist, hypnotherapist trainee and associate of Dr Robert McNeilly, Ericksonian Institute of Tasmania with over two decades experience in solution-oriented brief therapy. 
+                p.u-spaceT He has worked with adults, young people, families and couples and staff of community organisations with their own client bases, in a variety of settings including university counselling, community counselling centres and private practice.
+                p.u-spaceT For several years he helped develop a community-based family therapy centre that went on to win three awards for innovative best practice.
+                p.u-spaceT Mark offers counselling and training in solution and strengths-based approaches to therapy, mindfulness and hypnosis.
+                //- .u-marginT
+                //-     a.c-headline--inText.u-textLeft(href='/') Read more about Marks career &rarr;
+            
+            .Grid-cell.u-sm-size5of12.u-smDown-flexOrderFirst.u-smDown-spaceB.u-posRelative
                 img(src='assets/images/markquinn.jpg', style='opacity: 0.8;')
+                //- .o-posAbsoluteCenterAlt.o-coverImage(style='background-image: url("assets/images/markquinn.jpg"); opacity: 0.8;')
 
     .c-block.c-block--neutral#testimonials
         .o-container.u-textCenter
@@ -76,42 +81,44 @@ main.Main(role="main")
             hr.c-rule--short
             .c-carousel-tabs
                 .c-carousel-tab
-                    input#tab-1(type='radio', name='tabgroup' checked)
-                    label(for='tab-1')
+                    input#tab-1(type='radio', name='tabgroup' checked).u-hide
+                    label(for='tab-1').u-hide
                     .c-carousel-content
                         blockquote.c-headline--quote
-                          | 1. Mark was able to help where I felt others had not connected or understood me. Our discussions were easy, respectful. And in the end, what helped me was simply knowing what I could do for myself, rather than what I was doing wrong.
+                          | Mark has really helped me turn my life around. 
+                          | I am completely unrecognisable to the person who turned up to his service, and I can not thank him enough for his help.
+                          | #[span — 26 year-old male]
 
-                .c-carousel-tab
-                    input#tab-2(type='radio', name='tabgroup')
-                    label(for='tab-2')
-                    .c-carousel-content
-                        blockquote.c-headline--quote
-                          | 2. Mark was able to help not connected or understood me. Our discussions were easy, respectful. And in the end, what helped me was simply knowing what I could do for myself, what I was doing wrong.
-
-                .c-carousel-tab
-                    input#tab-3(type='radio', name='tabgroup')
-                    label(for='tab-3')
-                    .c-carousel-content
-                        blockquote.c-headline--quote
-                          | 3. I felt others had not connected or understood me. Our discussions were easy, respectful. And in the end, was simply knowing what I could do for myself, rather than what I was doing wrong.
->>>>>>> origin/master
+                //- .c-carousel-tab
+                //-     input#tab-2(type='radio', name='tabgroup')
+                //-     label(for='tab-2')
+                //-     .c-carousel-content
+                //-         blockquote.c-headline--quote
+                //-           | 2. Mark was able to help not connected or understood me. Our discussions were easy, respectful. And in the end, what helped me was simply knowing what I could do for myself, what I was doing wrong.
+                //- 
+                //- .c-carousel-tab
+                //-     input#tab-3(type='radio', name='tabgroup')
+                //-     label(for='tab-3')
+                //-     .c-carousel-content
+                //-         blockquote.c-headline--quote
+                //-           | 3. I felt others had not connected or understood me. Our discussions were easy, respectful. And in the end, was simply knowing what I could do for myself, rather than what I was doing wrong.
 
     .o-container.o-container--sm.c-block#contact
         .u-textCenter
             h2.c-headline--inText Get in touch
             hr.c-rule--short
-            p.c-text If you&apos;d like to engage in an affirmative strength-based collaboration, write to me using the form below. Or get in touch:
+            p.c-text Begin an affirmative strength-based collaboration to make real change. Write to me using the form below, or get in touch:
 
         .u-textCenter.u-marginT15
             p.c-text.u-colorBrand.u-marginB0 Email: 
-                a.o-link(href='mailto:mark@markquinn.com.au') mark@markquinn.com.au
+                a.o-link(href='mailto:#{email}') #{email}
             p.c-text.u-colorBrand Call: 
-                a.o-link(href='+61 0408 767 540') +61 0408 767 540
+                a.o-link(href='tel:#{phone}') #{phone}
             p.c-text.u-marginT15
-                | If you&apos;re not ready to go further, no problem. If you fill in the simple form below, I&apos;ll send you a single-page PDF that outlines 10 habits which, in my experience, have almost always given positive outcomes.
+                | If you&apos;re not ready, you can fill in your details to unlock a single-page PDF of three proven ways to make effective change today.
         
-        form#js-contact-form.c-form.u-marginT15(method='POST', action='https://formspree.io/mark@markquinn.com.au')
+        //- form#js-contact-form.c-form.u-marginT15(method='POST', action='https://formspree.io/#{site}')
+        form#js-contact-form.c-form.u-marginT15(method='POST', action='https://formspree.io/callumflack@gmail.com')
             #js-contact-flash-messages
             .c-form-group
                 input.c-form-control(placeholder='First Name', name='first-name')
@@ -131,27 +138,32 @@ main.Main(role="main")
                     li: a(data-scroll='', href='#testimonials') What people say
                     li: a(data-scroll='', href='#contact') Contact
                 
-            .Grid.Grid--withGutters.u-colorBlack40.c-text--sm
+            .Grid.Grid--withGutters
                 .Grid-cell.u-sm-size.u-marginR15
-                    div Your Office Name
-                    div 2/177 Pointing Drive,
-                    div Canberra 4870
+                    ul.o-listClean.c-textSmGrey-block
+                        li Your Office Name
+                        li 2/177 Pointing Drive,
+                        li Canberra 4870
                 .Grid-cell.u-sm-size.u-marginR15
-                    div Call: +613 8460 9471
-                    div Office: +613 8460 9471
-                    div Email: mark@markquinn.com.au
+                    ul.o-listClean.c-textSmGrey-block
+                        li Call: +613 8460 9471
+                        li Office: +613 8460 9471
+                        li: a.o-linkLite(href="mailto:#{email}") #{email}
                 .Grid-cell.u-sm-size.u-marginR15
-                    div ABN 84 440 279 228
-                    div Copyright (c) Mark Quinn 2017
-                    div Website by Patternworks
+                    ul.o-listClean.c-textSmGrey-block
+                        li ABN #{abn}
+                        li Copyright © Mark Quinn 2017
+                        li Website by 
+                            a.o-linkLite(href="#{author}") Patternworks
 
-    .c-nav-trigger.u-sm-hide(data-modal-toggle='') Menu
+    .c-nav-trigger.u-sm-hide(data-modal-toggle) #[span Menu]
     .o-modal(tabindex="-1" role="dialog" aria-labelledby="mobileNav" data-modal="")
-        .o-modal-dialog.o-aligner(role="document")
-            .o-aligner-item
-                .Nav-logo
-                    a(href="/") #{site_title}
-                .Nav-menu
-                    li: a(data-scroll='', href='#why') Why Mark?
-                    li: a(data-scroll='', href='#testimonials') What people say
-                    li: a(data-scroll='', href='#contact') Contact
+        .o-modal-dialog(role="document")
+            .o-container.o-aligner(style="height:100vh")
+                .o-aligner-item
+                    .c-mobileNav-logo
+                        a(href="/") #{site_title}
+                    .c-mobileNav-menu
+                        li: a(data-scroll, href='#why') Why Mark?
+                        li: a(data-scroll, href='#testimonials') What people say
+                        li: a(data-scroll, href='#contact') Contact

@@ -26,7 +26,7 @@ $palette: (
     black                      : $base-black,
     text                       : #525975,
     text-dark                  : #151515,
-    text-light                 : tint($base-black, 50%),
+    text-light                 : tint($base-black, 60%),
     text-faint                 : tint($base-black, 70%),
     dark                       : tint($base-black, 15%),
     ash                        : tint($base-black, 22%),
@@ -124,7 +124,7 @@ $grid-breakpoints: (
 
 $container-max-widths: (
     sm: 544px,
-    md: 720px,
+    md: 660px,
     rg: 840px,
     lg: 960px,
     xl: 1400px,
@@ -167,9 +167,9 @@ $fontsizes: (
         lg            : 27px
     ),
     headline--sm: (
-        sm            : 18px,
-        rg            : 21px,
-        lg            : 24px
+        sm            : 17px,
+        rg            : 19px,
+        lg            : 21px
     ),
     headline--md: (
         sm            : 21px,
@@ -281,6 +281,7 @@ $sans-black           : '#{$font-sans-namespace}Heavy';
 //$display              : #{$display-font-name};
 $sans-regular-italic  : '#{$font-sans-namespace}Regular';
 $sans-medium-italic   : '#{$font-sans-namespace}Regular';
+$serif-roman-italic  : '#{$font-serif-namespace}RomanItalic';
 $serif-medium         : '#{$font-serif-namespace}Medium';
 $serif-medium-italic  : '#{$font-serif-namespace}MediumItalic';
 $serif-bold           : '#{$font-serif-namespace}Bold';
@@ -299,6 +300,7 @@ $serif-bold           : '#{$font-serif-namespace}Bold';
 @include font-face($sans-bold, '#{$fonts-path}#{$sans-bold}' );
 @include font-face($sans-heavy, '#{$fonts-path}#{$sans-heavy}' );
 @include font-face($sans-black, '#{$fonts-path}#{$sans-black}' );
+@include font-face($serif-roman-italic, '#{$fonts-path}#{$serif-roman-italic}' );
 @include font-face($serif-medium, '#{$fonts-path}#{$serif-medium}' );
 @include font-face($serif-medium-italic, '#{$fonts-path}#{$serif-medium-italic}' );
 @include font-face($serif-bold, '#{$fonts-path}#{$serif-bold}' );
@@ -324,6 +326,7 @@ $font-text-heavy      : join($sans-heavy, $main-font-stack);
 $font-text-black      : join($sans-black, $main-font-stack);
 $font-headline        : join($serif-medium, $serif-font-stack);
 $font-headline-i      : join($serif-medium-italic, $serif-font-stack);
+$font-quote-i         : join($serif-roman-italic, $serif-font-stack);
 $font-display         : join($serif-bold, $serif-font-stack);
 
 // Unused, so apply a default to avoid gulp fuckups

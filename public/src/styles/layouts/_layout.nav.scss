@@ -81,6 +81,17 @@
     font-family: $font-text-medium;
 }
 
+.c-nav-logo {
+    @include media-breakpoint-down(sm) {
+        margin: 0 auto;
+    }
+}
+
+.c-nav-logo span {
+    font-family: $font-text-regular;
+    margin: 0 space(0.25);
+}
+
 .c-nav--floating {
     position: absolute;
     width: 100%;

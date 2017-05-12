@@ -3,19 +3,25 @@
     background-color: palette(white);
     border-radius: 50%;
     bottom: $blockSpace * 1.45;
-    box-shadow: 0 0 space(1) rgba( palette(text), 0.4 );
-    color: palette(black);
-    font-family: $font-text-medium;
+    box-shadow: 0 0 space(1) rgba( palette(black), 0.3 );
+    cursor: pointer;
     line-height: 75px;
     position: fixed;
     right: space(1);
     text-align: center;
     width: 75px;
     z-index: 99;
+    
+    span {
+        color: palette(brand);
+        display: inline-block;
+        font-family: $font-text-medium;
+        transform: translateY(2px);
 
-    &:before {
-        content: '\2630';
-        font-size: 112%;
-        margin-right: 3px;
+        &:before {
+            content: '\2630';
+            font-size: 100%;
+            margin-right: 3px;
+        }
     }
 }
