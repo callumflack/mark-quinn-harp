@@ -141,17 +141,16 @@ main.Main(role="main")
             .Grid.Grid--withGutters
                 .Grid-cell.u-sm-size.u-marginR15
                     ul.o-listClean.c-textSmGrey-block
-                        li Your Office Name
-                        li 2/177 Pointing Drive,
-                        li Canberra 4870
+                        li #{address_1}
+                        li #{address_2}
+                        li #{address_3}
                 .Grid-cell.u-sm-size.u-marginR15
                     ul.o-listClean.c-textSmGrey-block
-                        li Call: +613 8460 9471
-                        li Office: +613 8460 9471
+                        li Call: #{phone}
                         li: a.o-linkLite(href="mailto:#{email}") #{email}
+                        li ABN: #{abn}
                 .Grid-cell.u-sm-size.u-marginR15
                     ul.o-listClean.c-textSmGrey-block
-                        li ABN #{abn}
                         li Copyright © Mark Quinn 2017
                         li Website by 
                             a.o-linkLite(href="#{author}") Patternworks
