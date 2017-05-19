@@ -82,27 +82,27 @@ main.Main(role="main")
             hr.c-rule--short
             .c-carousel-tabs
                 .c-carousel-tab
-                    input#tab-1(type='radio', name='tabgroup' checked).u-hide
-                    label(for='tab-1').u-hide
+                    input#tab-1(type='radio', name='tabgroup' checked)
+                    label(for='tab-1')
                     .c-carousel-content
                         blockquote.c-headline--quote
                           | Mark has really helped me turn my life around. 
                           | I am completely unrecognisable to the person who turned up to his service, and I can not thank him enough for his help.
-                          | #[span — 26 year-old male]
-
-                //- .c-carousel-tab
-                //-     input#tab-2(type='radio', name='tabgroup')
-                //-     label(for='tab-2')
-                //-     .c-carousel-content
-                //-         blockquote.c-headline--quote
-                //-           | 2. Mark was able to help not connected or understood me. Our discussions were easy, respectful. And in the end, what helped me was simply knowing what I could do for myself, what I was doing wrong.
-                //- 
-                //- .c-carousel-tab
-                //-     input#tab-3(type='radio', name='tabgroup')
-                //-     label(for='tab-3')
-                //-     .c-carousel-content
-                //-         blockquote.c-headline--quote
-                //-           | 3. I felt others had not connected or understood me. Our discussions were easy, respectful. And in the end, was simply knowing what I could do for myself, rather than what I was doing wrong.
+                          | #[span — 26 year-old male client]
+                .c-carousel-tab
+                    input#tab-2(type='radio', name='tabgroup')
+                    label(for='tab-2')
+                    .c-carousel-content
+                        blockquote.c-headline--quote
+                          | I have known Mark Quinn for more than 10 years and appreciate him as a human being and as a respectful, effective therapist. It is a pleasure to recommend him.
+                          | #[span — Rob McNeilly, Director of the Ericksonian Institute of Tasmania]
+                .c-carousel-tab
+                    input#tab-3(type='radio', name='tabgroup')
+                    label(for='tab-3')
+                    .c-carousel-content
+                        blockquote.c-headline--quote
+                          | Mark’s approach is very gentle, compassionate and caring client-centred. Mark’s focus is on what you can do, and building strength from that point.
+                          | #[span — 58 year-old female colleague]
 
     .o-container.o-container--sm.c-block#contact
         .u-textCenter
@@ -132,7 +132,7 @@ main.Main(role="main")
 
     footer.c-footer
         .o-container
-            nav.c-nav(role='banner')
+            nav.c-nav.u-smDown-paddingBD2(role='banner')
                 .c-nav-logo #{site_title}
                 ul.c-nav-menu.u-textRight
                     li: a(data-scroll='', href='#why') Why Mark?
@@ -141,17 +141,17 @@ main.Main(role="main")
                 
             .Grid.Grid--withGutters
                 .Grid-cell.u-sm-size.u-marginR15
-                    ul.o-listClean.c-textSmGrey-block
+                    ul.o-listClean.c-textSmGrey-block.u-smDown-spaceBD2
                         li #{address_1}
                         li #{address_2}
                         li #{address_3}
                 .Grid-cell.u-sm-size.u-marginR15
-                    ul.o-listClean.c-textSmGrey-block
+                    ul.o-listClean.c-textSmGrey-block.u-smDown-spaceBD2
                         li Call: #{phone}
                         li: a.o-linkLite(href="mailto:#{email}") #{email}
                         li ABN: #{abn}
                 .Grid-cell.u-sm-size.u-marginR15
-                    ul.o-listClean.c-textSmGrey-block
+                    ul.o-listClean.c-textSmGrey-block.u-smDown-spaceBD2
                         li Copyright © Mark Quinn 2017
                         li Website by 
                             a.o-linkLite(href="#{author}") Patternworks
