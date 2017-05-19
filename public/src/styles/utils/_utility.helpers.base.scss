@@ -118,6 +118,8 @@
 .u-spaceR     { margin-right: space(1) !important; }
 
 
+.u-smDown-paddingBD2 { @include media-breakpoint-down(xs) { padding-bottom: space(0.5); } }
+
 
 // responsive
 .u-sm-spaceLN1 { @include media-breakpoint-up(sm) { margin-left: -1px; } }
@@ -129,6 +131,7 @@
 .u-smDown-spaceTD2 { @include media-breakpoint-down(xs) { margin-top: space(0.5); } }
 .u-smDown-spaceT   { @include media-breakpoint-down(xs) { margin-top: space(1); } }
 .u-smDown-spaceT2  { @include media-breakpoint-down(xs) { margin-top: space(2); } }
+.u-smDown-spaceBD2 { @include media-breakpoint-down(xs) { margin-bottom: space(0.5); } }
 .u-smDown-spaceB   { @include media-breakpoint-down(xs) { margin-bottom: space(1); } }
 .u-smDown-spaceR   { @include media-breakpoint-down(xs) { margin-right: space(1); } }
 
