@@ -15,7 +15,8 @@ function setFlashMessage(success) {
     messageElem.classList.add(`c-alert-${messageType}`);
 
     if (success) {
-        messageElem.innerHTML = `Sent! Download <a class='o-linkUnderline' href='/download'>three proven ways to make effective change</a>.`;
+        // messageElem.innerHTML = `Sent! Download <a class='o-linkUnderline' href='/download'>three proven ways to make effective change</a>.`;
+        messageElem.innerHTML = `Message sent!`;
     } else {
         messageElem.innerHTML = 'Woops, something went wrong. Please try again.';
     }
